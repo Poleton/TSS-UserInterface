@@ -1,0 +1,11 @@
+
+<h2>Prolicy List</h2> 
+
+
+<ul class="Policies">
+  <li *ngFor="let p of policies; let i=index;">
+      <a routerLink="/app-policy/{{p.id}}">
+      <span class="badge">{{i+1}}</span> {{p.name}}
+    </a> 
+  </li>
+</ul>
