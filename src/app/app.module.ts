@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DataTableModule } from "angular-4-data-table-bootstrap-4";
-import {ChuckModule} from "./chuck.module"
+
 import { AppComponent } from "./app.component";
 
 @NgModule({
@@ -13,8 +13,7 @@ import { AppComponent } from "./app.component";
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    DataTableModule,
-    ChuckModule
+    DataTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

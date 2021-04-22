@@ -1,21 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { DataTableResource } from "angular-4-data-table-bootstrap-4";
-/*PROVES AMB HTTPCLIENT*
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
-@Injectable()
-export class ConfigService {
-  url = "http://localhost:3000";
-  constructor(private http: HttpClient) {}
-  getAll(): Observable<any> {
-    return this.http
-      .get(this.url + "?_sort=id&_order=desc")
-      .map(response => response.json());
-  }
-}
-/*FI DE PROVES*/
+
 
 @Component({
   selector: "app-root",
