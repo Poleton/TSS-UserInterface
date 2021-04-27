@@ -15,7 +15,7 @@ export class PolicyTableComponent implements OnInit {
 
   constructor(private restService: RestService) {}
   
-  /*Filtratge
+  /*FILTERING PENDENT
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
