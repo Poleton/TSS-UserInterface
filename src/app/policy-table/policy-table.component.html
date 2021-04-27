@@ -2,7 +2,7 @@
   <a>{{policy.name}}</a>
 </div> -->
 
-<!--Filtering keywords by Pol PENDENT
+<!--Filtering keywords by Pol
 <mat-form-field>
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="Introduce a keyword to search..." #input>
@@ -26,24 +26,42 @@
     <td mat-cell *matCellDef="let policy"> {{policy.name}} </td>
   </ng-container>
 
-  <!-- Weight Column -->
-  <ng-container matColumnDef="date">
-    <th mat-header-cell *matHeaderCellDef> Date </th>
-    <td mat-cell *matCellDef="let policy"> {{policy.date}} </td>
+  <!-- Duration Column -->
+  <ng-container matColumnDef="duration">
+    <th mat-header-cell *matHeaderCellDef> Duration </th>
+    <td mat-cell *matCellDef="let policy"> {{policy.duration}} </td>
   </ng-container>
 
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="condition">
-    <th mat-header-cell *matHeaderCellDef> Condition </th>
-    <td mat-cell *matCellDef="let policy"> {{policy.condition}} </td>
+  <!-- Country Column -->
+  <ng-container matColumnDef="territorialScope">
+    <th mat-header-cell *matHeaderCellDef> Delivery Country </th>
+    <td mat-cell *matCellDef="let policy"> {{policy.territorialScope}} </td>
+  </ng-container>
+
+  <!-- Transportation Column -->
+  <ng-container matColumnDef="meansOfTransportation">
+    <th mat-header-cell *matHeaderCellDef> Transportation </th>
+    <td mat-cell *matCellDef="let policy"> {{policy.meansOfTransportation}} </td>
+  </ng-container>
+
+  <!-- Sensors Column -->
+  <ng-container matColumnDef="numSensors">
+    <th mat-header-cell *matHeaderCellDef> # Sensors </th>
+    <td mat-cell *matCellDef="let policy"> {{policy.numSensors}} </td>
+  </ng-container>
+
+  <!-- Conditions Column -->
+  <ng-container matColumnDef="conditions">
+    <th mat-header-cell *matHeaderCellDef> Conditions </th>
+    <td mat-cell *matCellDef="let policy"> {{policy.conditions}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-  <!-- Row shown when there is no matching data. -->
+  <!-- Row shown when there is no matching data.  FILTERING PENDENT
   <tr class="mat-row" *matNoDataRow>
     <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
   </tr>
-
+  -->
 </table>
