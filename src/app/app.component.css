@@ -1,4 +1,16 @@
 .mat-tab{
     background-color: lightgrey;
     color: black;
-  }
+    font-size: large;
+}
+.mat-tab-group{
+    background-color: cadetblue;
+}
+.mat-ink-bar {
+    background-color: green;
+}
+
+.mat-tab-label-active {
+    border-right: 2px solid primary-color;
+}
+

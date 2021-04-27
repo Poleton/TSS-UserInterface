@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { MatTableModule } from "@angular/material/table";
 import { MatTabsModule } from "@angular/material/tabs";
-import { TableComponent } from './table/table.component'
+import { PolicyTableComponent } from './policy-table/policy-table.component'
 import { MatDividerModule } from "@angular/material/divider";
 
 @NgModule({

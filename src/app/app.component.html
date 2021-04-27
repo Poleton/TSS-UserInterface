@@ -17,15 +17,20 @@
 </app-tabs> -->
 
 <div>
-  <mat-tab-group dynamicHeight [backgroundColor]="'primary'" [color]="'warn'">
-    <mat-tab label="Policies"> 
-      <mat-divider></mat-divider>
+  <mat-tab-group dynamicHeight [backgroundColor]="'accent'" [color]="'warn'">
+    
+    <mat-tab label="Policies">
       <div>
-        <app-table> </app-table>
-      </div> 
+        <app-policy-table> </app-policy-table>
+      </div>
     </mat-tab>
-    <mat-tab label="SmartPolicies"> AstraZeneca_April </mat-tab>
-    <mat-tab label="Finished Policies"> Pfizer_March </mat-tab>
+    <mat-divider> </mat-divider>
+    <mat-tab label="Smart Policies"> 
+      <div>
+        <app-smart-policy-table> </app-smart-policy-table>
+      </div>
+    </mat-tab>
+    <mat-tab label="Finished Policies"> Yet to implement </mat-tab>
   </mat-tab-group>
 </div>
 <!-- <router-outlet></router-outlet> -->
