@@ -10,18 +10,26 @@ import { MatInputModule } from "@angular/material/input";
   styleUrls: ["./policy-table.component.css"]
 })
 export class PolicyTableComponent implements OnInit {
-  displayedColumns: string[] = ["id", "name", "duration", "territorialScope", "meansOfTransportation", "numSensors", "conditions"];
+  displayedColumns: string[] = [
+    "id",
+    "name",
+    "duration",
+    "territorialScope",
+    "meansOfTransportation",
+    "numSensors",
+    "conditions"
+  ];
   dataSource: Policy[] = [];
 
   constructor(private restService: RestService) {}
-  
+
   /*FILTERING PENDENT
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   */
-  
+
   ngOnInit() {
     this.restService.getPolicies().subscribe(rest => (this.dataSource = rest));
   }

@@ -13,18 +13,19 @@ import { HttpClientModule } from "@angular/common/http";
 import { RestService } from "./services/rest.service";
 import { SmartPolicyTableComponent } from "./smart-policy-table/smart-policy-table.component";
 
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
+import { ReactiveFormsModule } from "@angular/forms";
+import {NewPolicyWindowComponent} from "./new-policy-window/new-policy-window.component";
 
 @NgModule({
-  declarations: [PolicyTableComponent, AppComponent, SmartPolicyTableComponent],
+  declarations: [PolicyTableComponent, AppComponent, SmartPolicyTableComponent, NewPolicyWindowComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AppMaterialModule,
     HttpClientModule,
-    MatDividerModule
+    MatDividerModule,
+    ReactiveFormsModule
   ],
   providers: [RestService],
   bootstrap: [AppComponent]
