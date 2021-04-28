@@ -19,8 +19,6 @@ export class PolicyTableComponent implements OnInit {
   ngOnInit()  {
     this.restService.getPolicies()
     .subscribe(rest => this.dataSource = rest);
-   
   }
-
 
 }
