@@ -4,8 +4,12 @@ import { Policy } from "../models/policy.model";
 import { RestService } from "../services/rest.service";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
-import { PoliciesToolbarComponent } from '../policies-toolbar/policies-toolbar.component'
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { PoliciesToolbarComponent } from "../policies-toolbar/policies-toolbar.component";
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA
+} from "@angular/material/dialog";
 import { NewSmartPolicyDialogComponent } from "../new-smart-policy-dialog/new-smart-policy-dialog.component";
 @Component({
   selector: "app-policy-table",
@@ -16,19 +20,14 @@ export class PolicyTableComponent implements OnInit {
   displayedColumns: string[] = [
     "id",
     "product",
-    "duration",
-    "territorialScope",
-    "meansOfTransportation",
-    "numSensors",
-    "conditions",
-    "actions"
+    "description",
+    "holderName",
+    "mailAdress",
+    "duration"
   ];
   dataSource: Policy[] = [];
 
-  constructor(
-    private restService: RestService,
-    public dialog: MatDialog
-    ) {}
+  constructor(private restService: RestService, public dialog: MatDialog) {}
 
   /*FILTERING PENDENT
   applyFilter(event: Event) {
@@ -44,9 +43,7 @@ export class PolicyTableComponent implements OnInit {
     });
   }
 
-  ngOnInit()  {
-    this.restService.getPolicies()
-    .subscribe(rest => this.dataSource = rest);
+  ngOnInit() {
+    this.restService.getPolicies().subscribe(rest => (this.dataSource = rest));
   }
-
 }
