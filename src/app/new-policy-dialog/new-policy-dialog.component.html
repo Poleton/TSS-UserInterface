@@ -1,13 +1,11 @@
-<h1 mat-dialog-title> Create new policy </h1>
+<h1 mat-dialog-title> New policy </h1>
 <mat-dialog-content>
     <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
-        <input type="text" name="holderName" ngModel placeholder="holderName"> <br> <br>
         <input type="text" name="product" ngModel placeholder="product"> <br> <br>
+        <input type="text" name="description" ngModel placeholder="description"> <br> <br>
+        <input type="text" name="holderName" ngModel placeholder="holderName"> <br> <br>
+        <input type="text" name="mailAdress" ngModel placeholder="mailAdress"> <br> <br>
         <input type="text" name="duration" ngModel placeholder="duration"> <br> <br>
-        <input type="text" name="territorialScope" ngModel placeholder="territorial scope"> <br> <br>
-        <input type="text" name="meansOfTransport" ngModel placeholder="means of transport"> <br> <br>
-        <input type="text" name="numSensors" ngModel placeholder="number of sensors"> <br> <br>
-        <input type="text" name="conditions" ngModel placeholder="condition"> <br> <br>
         <button class="mat-raised-button" type="submit"> Create </button>
       </form>
     <!--<mat-form-field>
@@ -31,6 +29,6 @@
 </mat-dialog-content>
   
 <mat-dialog-actions>
-    <button class="mat-raised-button"(click)="close()">Cancel</button>
+    <button class="mat-raised-button"(click)="close()"> Cancel </button>
     <!-- <button class="mat-raised-button mat-primary" [mat-dialog-data]="data"cdkFocusInitial>Confirmar</button> -->
 </mat-dialog-actions>
