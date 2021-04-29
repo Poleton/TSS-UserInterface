@@ -1,6 +1,7 @@
-<h1 mat-dialog-title> Create new policy </h1>
+<h1 mat-dialog-title> Convert to smart policy </h1> 
 <mat-dialog-content>
     <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+        <a>{{this.id}}</a>
         <input type="text" name="holderName" ngModel placeholder="holderName"> <br> <br>
         <input type="text" name="product" ngModel placeholder="product"> <br> <br>
         <input type="text" name="duration" ngModel placeholder="duration"> <br> <br>
@@ -10,24 +11,6 @@
         <input type="text" name="conditions" ngModel placeholder="condition"> <br> <br>
         <button class="mat-raised-button" type="submit"> Create </button>
       </form>
-    <!--<mat-form-field>
-        <input matInput
-                placeholder="Course Description"
-               formControlName="description"
-        >
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput [(ngModel)]="data.id" 
-        type="number" placeholder="Id">
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput [(ngModel)]="data.name" 
-        type="string" placeholder="name">
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput [(ngModel)]="data.duration" 
-        type="string" placeholder="duration">
-    </mat-form-field>-->
 </mat-dialog-content>
   
 <mat-dialog-actions>

@@ -5,6 +5,8 @@ import { RestService } from "../services/rest.service";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { PoliciesToolbarComponent } from '../policies-toolbar/policies-toolbar.component'
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { NewSmartPolicyDialogComponent } from "../new-smart-policy-dialog/new-smart-policy-dialog.component";
 @Component({
   selector: "app-policy-table",
   templateUrl: "./policy-table.component.html",
@@ -18,11 +20,15 @@ export class PolicyTableComponent implements OnInit {
     "territorialScope",
     "meansOfTransportation",
     "numSensors",
-    "conditions"
+    "conditions",
+    "actions"
   ];
   dataSource: Policy[] = [];
 
-  constructor(private restService: RestService) {}
+  constructor(
+    private restService: RestService,
+    public dialog: MatDialog
+    ) {}
 
   /*FILTERING PENDENT
   applyFilter(event: Event) {
@@ -30,6 +36,13 @@ export class PolicyTableComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   */
+  openDialog() {
+    const dialogRef = this.dialog.open(NewSmartPolicyDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
   ngOnInit()  {
     this.restService.getPolicies()

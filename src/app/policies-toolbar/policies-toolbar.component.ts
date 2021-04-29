@@ -10,7 +10,7 @@ import { Policy } from '../models/policy.model';
 })
 export class PoliciesToolbarComponent implements OnInit {
 
-  datos: Policy[]=[];
+  //datos: Policy[]=[];
 
   ngOnInit() {
 

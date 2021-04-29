@@ -8,7 +8,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 @NgModule({
   declarations: [],
   imports: [
@@ -21,7 +23,8 @@ import { FormsModule } from '@angular/forms'
      MatButtonModule, 
      MatFormFieldModule,
      MatDialogModule,
-     FormsModule
+     FormsModule,
+     MatSlideToggleModule,
     ],
   exports: [
     CommonModule, 
@@ -33,7 +36,8 @@ import { FormsModule } from '@angular/forms'
     MatButtonModule, 
     MatFormFieldModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    MatSlideToggleModule,
   ]
 })
 export class AppMaterialModule {}

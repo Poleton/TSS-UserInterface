@@ -13,9 +13,10 @@ import { RestService } from "./services/rest.service";
 import { SmartPolicyTableComponent } from "./smart-policy-table/smart-policy-table.component";
 
 import { ReactiveFormsModule } from "@angular/forms";
-import {NewPolicyWindowComponent} from "./new-policy-window/new-policy-window.component";
+import { NewPolicyWindowComponent } from "./new-policy-window/new-policy-window.component";
 import { PoliciesToolbarComponent} from "./policies-toolbar/policies-toolbar.component";
 import { NewPolicyDialogComponent } from './new-policy-dialog/new-policy-dialog.component';
+import { NewSmartPolicyDialogComponent } from './new-smart-policy-dialog/new-smart-policy-dialog.component';
 @NgModule({
   declarations: [
      AppComponent, 
@@ -23,7 +24,8 @@ import { NewPolicyDialogComponent } from './new-policy-dialog/new-policy-dialog.
      SmartPolicyTableComponent, 
      NewPolicyWindowComponent, 
      PoliciesToolbarComponent, 
-     NewPolicyDialogComponent
+     NewPolicyDialogComponent,
+     NewSmartPolicyDialogComponent
     ],
   imports: [
     BrowserModule,
