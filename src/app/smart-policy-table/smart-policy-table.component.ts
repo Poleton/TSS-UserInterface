@@ -10,7 +10,7 @@ import { RestService } from '../services/rest.service';
 })
 export class SmartPolicyTableComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'name', 'date', 'condition'];
+  displayedColumns: string[] = ['id', 'product', 'description', 'holderName', 'mailAdress', 'duration', 'details'];
   dataSource : SmartPolicy[] = [];
 
   constructor(private restService: RestService) { }

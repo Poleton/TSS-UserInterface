@@ -21,7 +21,7 @@ export class RestService {
   getSmartPolicies(){
     return this._http.get<SmartPolicy[]>(this.apiUrl)
   }
-  postPolicy(data: any){
+  postSmartPolicy(data: any){
     return this._http.post(this.apiUrl, data)
   }
 }

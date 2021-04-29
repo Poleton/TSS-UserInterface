@@ -24,13 +24,14 @@ export class NewSmartPolicyDialogComponent implements OnInit {
   onSubmit(data: any){
     
     //this.http.post('https://ce6c86ca-84fd-42bb-9343-076993ac36fa.mock.pstmn.io', data)
-    this.restService.postPolicy(data)
+    this.restService.postSmartPolicy(data)
     .subscribe((result)=>{
       console.warn("result", result)
     })
     console.warn(data)
     this.dialogRef.close();
   }
+  
   close() {
       this.dialogRef.close();
   }
