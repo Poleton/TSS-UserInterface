@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Policy } from './models/policy.model';
 import { RestService } from './services/rest.service';
 
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,10 @@ import { RestService } from './services/rest.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title: any;
   
   
-  constructor(private restService: RestService) {
+  constructor(private restService: RestService, private title: Title) {
+    title.setTitle('Telematics Smart Shipments')
   }
 
   ngOnInit() {

@@ -23,7 +23,8 @@ export class PolicyTableComponent implements OnInit {
     "description",
     "holderName",
     "mailAdress",
-    "duration"
+    "duration",
+    "actions"
   ];
   dataSource: Policy[] = [];
 
@@ -35,8 +36,12 @@ export class PolicyTableComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   */
-  openDialog() {
-    const dialogRef = this.dialog.open(NewSmartPolicyDialogComponent);
+  openDialog(id_item: number) {
+    const dialogRef = this.dialog.open(NewSmartPolicyDialogComponent, {
+      data:{
+        id: id_item
+      }
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

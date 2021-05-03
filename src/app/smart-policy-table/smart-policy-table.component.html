@@ -21,27 +21,28 @@
   
     <ng-container matColumnDef="holderName">
       <th mat-header-cell *matHeaderCellDef> Holder </th>
-      <td mat-cell *matCellDef="let smartPolicy"> {{smartPolicy.condition}} </td>
+      <td mat-cell *matCellDef="let smartPolicy"> {{smartPolicy.holderName}} </td>
     </ng-container>
     
     <ng-container matColumnDef="mailAdress">
       <th mat-header-cell *matHeaderCellDef> E-Mail </th>
-      <td mat-cell *matCellDef="let smartPolicy"> {{smartPolicy.condition}} </td>
+      <td mat-cell *matCellDef="let smartPolicy"> {{smartPolicy.mailAdress}} </td>
     </ng-container>
 
     <ng-container matColumnDef="duration">
       <th mat-header-cell *matHeaderCellDef> Duration </th>
-      <td mat-cell *matCellDef="let smartPolicy"> {{smartPolicy.condition}} </td>
+      <td mat-cell *matCellDef="let smartPolicy"> {{smartPolicy.duration}} </td>
     </ng-container>
     
     <!-- Aqui el button the view details-->
     
     <ng-container matColumnDef="details">
       <th mat-header-cell *matHeaderCellDef> Details </th>
-      <td mat-cell *matCellDef="let smartPolicy"> {{smartPolicy.condition}} </td>
+      <td mat-cell *matCellDef="let smartPolicy"> 
+        <button mat-icon-button (click)="openDetailsDialog(smartPolicy)"> <mat-icon> open_in_new </mat-icon> </button>
+      </td>
     </ng-container>
 
-  
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     

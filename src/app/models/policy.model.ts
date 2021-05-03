@@ -1,10 +1,8 @@
 export class Policy {
     id!: number;
     product!: string;
+    description!: string;
+    holderName!: string;
+    mailAdress!: string;
     duration!: string;
-    territorialScope!: string; //countries where the delivery will take place 
-    meansOfTransportation!: string; 
-    numSensors!: number;
-    conditions!: string; //[dictionary ( values range –  % reserve per min )] sets the conditions in which the shipped goods will have to be compensated all time units in the conditions measurements are in minutes 
-
 }
