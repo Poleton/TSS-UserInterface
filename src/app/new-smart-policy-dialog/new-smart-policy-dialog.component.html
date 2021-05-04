@@ -2,13 +2,17 @@
 <mat-dialog-content>
     <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
         <p>{{this.id}}</p>
-        <input type="text" name="holderName" ngModel placeholder="holderName"> <br> <br>
-        <input type="text" name="product" ngModel placeholder="product"> <br> <br>
-        <input type="text" name="duration" ngModel placeholder="duration"> <br> <br>
-        <input type="text" name="territorialScope" ngModel placeholder="territorial scope"> <br> <br>
-        <input type="text" name="meansOfTransport" ngModel placeholder="means of transport"> <br> <br>
-        <input type="text" name="numSensors" ngModel placeholder="number of sensors"> <br> <br>
-        <input type="text" name="conditions" ngModel placeholder="condition"> <br> <br>
+
+        <input type="text" name="policyId" ngModel placeholder="policyId"> <br> <br>
+        <input type="text" name="contractAddress" ngModel placeholder="contractAddress"> <br> <br>
+        <input type="text" name="clientAddress" ngModel placeholder="clientAddress"> <br> <br>
+        <input type="text" name="insuranceAddress" ngModel placeholder="insuranceAddress"> <br> <br>
+        <input type="text" name="brokerAdress" ngModel placeholder="brokerAdress"> <br> <br>
+        <input type="text" name="shipmentId" ngModel placeholder="shipmentId"> <br> <br>
+        <input type="text" name="shipmentLiability" ngModel placeholder="shipmentLiability"> <br> <br>
+        
+        <!--Sensors SISTEMA MAP CON CHECKBOX-->
+
         <button class="mat-raised-button" type="submit"> Create </button>
       </form>
 </mat-dialog-content>
