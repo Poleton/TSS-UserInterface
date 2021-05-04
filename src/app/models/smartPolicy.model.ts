@@ -1,4 +1,5 @@
 export class SmartPolicy{
+    
     //these are common with the policy
     id!: number;
     product!: string;
