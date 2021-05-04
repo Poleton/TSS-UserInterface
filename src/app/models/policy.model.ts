@@ -18,5 +18,5 @@ export class Policy {
     description!: string;
     mailAdress!: string;
     duration!: string;
-    
+
 }
