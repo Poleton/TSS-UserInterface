@@ -1,25 +1,31 @@
 export class SmartPolicy{
-    
-    //these are common with the policy
-    id!: number;
+
+    //These are in common with the policy
+    policyName!: string;
+    policyHolderCIF!: string;
+    policyHolderName!: string; 
     product!: string;
+    territorialScope!: string;
+    contractPremium!: number;
+    contractLiability!: number;
+    expiryTimestamp!: number;
+    //Added for the customer, also in common
     description!: string;
     holderName!: string;
     mailAdress!: string;
     duration!: string;
-    //these are exclusive to the smartpolicy
-    territorialScope!: string;
-    meansOfTransport!: string;
-    numSensors!: number;
-    conditions!: string;
-    policyId!: number;
     
+    //These are exclusive to the smartpolicy
+    policyId!: number;
+    contractAdress!: string;
     clientAdress!: string;
     insuranceAddress!: string;
     brokerAdress!: string;
-
     shipmentID!:number;
     shipmentLiability!:number;
+
+    //MISSING MAP(String,SENSOR) *Do not put empty sensors!* 
+
     sensorID!:number;
     sensorType!:number;
     levelDepth!:number;
@@ -28,6 +34,10 @@ export class SmartPolicy{
     levelMaximumRange!:number;
     percentualWeight!:number;
 
-    contractPremium!:number;
-    contractLiability!:number;
+    /*
+    meansOfTransport!: string;
+    numSensors!: number;
+    conditions!: string;
+    */
+    
 }

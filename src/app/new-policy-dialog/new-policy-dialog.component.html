@@ -1,13 +1,26 @@
 <h1 mat-dialog-title> New policy </h1>
 <mat-dialog-content>
     <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+        <!--Imput parameters-->
+        <!--Angular to API-->
+        <input type="text" name="policyName" ngModel placeholder="policyName"> <br> <br>
+        <input type="text" name="policyHolderCIF" ngModel placeholder="policyHolderCIF"> <br> <br>
+        <input type="text" name="policyHolderName" ngModel placeholder="policyHolderName"> <br> <br>
         <input type="text" name="product" ngModel placeholder="product"> <br> <br>
+        <input type="text" name="territorialScope" ngModel placeholder="territorialScope"> <br> <br>
+        <input type="text" name="contractPremium" ngModel placeholder="contractPremium"> <br> <br>
+        <input type="text" name="contractLiability" ngModel placeholder="contractLiability"> <br> <br>
+        <input type="text" name="expiryTimestamp" ngModel placeholder=""> <br> <br>
+        <input type="text" name="" ngModel placeholder=""> <br> <br>
+        <!--Added for the customer-->
         <input type="text" name="description" ngModel placeholder="description"> <br> <br>
-        <input type="text" name="holderName" ngModel placeholder="holderName"> <br> <br>
         <input type="text" name="mailAdress" ngModel placeholder="mailAdress"> <br> <br>
         <input type="text" name="duration" ngModel placeholder="duration"> <br> <br>
+
         <button class="mat-raised-button" type="submit"> Create </button>
       </form>
+
+
     <!--<mat-form-field>
         <input matInput
                 placeholder="Course Description"

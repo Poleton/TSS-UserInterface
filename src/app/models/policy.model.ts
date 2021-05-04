@@ -8,13 +8,14 @@ export class Policy {
     contractPremium!: number;
     contractLiability!: number;
     expiryTimestamp!: number;
+
     //API->Angular
     id!: number;
     inceptionTimestamp!: number;
-    isSmart!: boolean; 
+    isSmart!: boolean;
+
     //Added for the customer
     description!: string;
-    holderName!: string;
     mailAdress!: string;
     duration!: string;
     
