@@ -9,10 +9,14 @@ import { SmartPolicy } from '../models/smartPolicy.model';
 export class RestService {
 
   //url will change depending on the user and the data
-  apiUrl = 'https://c1f94fe9-cfa4-48ce-a1a5-dcbe1da04468.mock.pstmn.io'; //HUGO
-  //apiUrl = 'https://02302687-5514-431f-99cd-0e5c77066d15.mock.pstmn.io'; //POL
-  apiDetails= 'https://2be45dd2-c306-4db0-abf4-43d1405bafdb.mock.pstmn.io/smartpolicy'; 
-  apiUrlSmart= 'https://2efb7a36-0d34-4da4-aeb6-c5473db0e9ce.mock.pstmn.io/smart';
+
+  //HUGO
+  //apiUrl = 'https://2be45dd2-c306-4db0-abf4-43d1405bafdb.mock.pstmn.io'; 
+  //apiDetails= 'https://2be45dd2-c306-4db0-abf4-43d1405bafdb.mock.pstmn.io/smartpolicy';
+
+  //POL
+  apiUrl = 'https://908bf3e7-ef91-4be0-8a03-a073bb10f567.mock.pstmn.io'; //policy
+  apiDetails= 'https://5abe182e-3540-4e0f-9fbf-b6383bbe760f.mock.pstmn.io'; //smart policy
   
   constructor( private _http: HttpClient) { }
 
@@ -28,6 +32,9 @@ export class RestService {
 
   }*/
   postSmartPolicy(data: any){
+    return this._http.post(this.apiUrl, data)
+  }
+  postPolicy(data: any){
     return this._http.post(this.apiUrl, data)
   }
 }
