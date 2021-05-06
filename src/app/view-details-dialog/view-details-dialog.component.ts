@@ -19,8 +19,8 @@ export class ViewDetailsDialogComponent implements OnInit {
     private dialogRef: MatDialogRef<ViewDetailsDialogComponent>) { }
 
   ngOnInit(): void {
-    this.restService.getSmartPolicy(1)
-    .subscribe(rest => this.smartPolicy = rest);
+    /*this.restService.getSmartPolicy(1)
+    .subscribe(rest => this.smartPolicy = rest);*/
   }
   
   onClick(){

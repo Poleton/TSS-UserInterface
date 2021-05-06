@@ -1,18 +1,20 @@
+<!--  <h1 [routerLink]="['/smartpolicy-details']" >prova route</h1> -->
+
 <h1 mat-dialog-title> Details of the smart policy </h1> 
 <mat-dialog-content> 
-<p> {{data.smartPolicy.id}} </p>
-<p> {{data.smartPolicy.product}} </p>
-<p> {{data.smartPolicy.description}} </p> 
-<p> {{data.smartPolicy.holderName}} </p>
-<p> {{data.smartPolicy.mailAdress}} </p>
-<p> {{data.smartPolicy.duration}} </p>
-<p> {{data.smartPolicy.territorialScope}} </p>
-<p> {{data.smartPolicy.meansOfTransport}} </p>
-<p> {{data.smartPolicy.numSensors}} </p>
+<p> id: {{data.smartPolicy.id}} </p>
+<p> product: {{data.smartPolicy.product}} </p>
+<p> description: {{data.smartPolicy.description}} </p> 
+<p> holderName: {{data.smartPolicy.holderName}} </p>
+<p> mailAdress: {{data.smartPolicy.mailAdress}} </p>
+<p> duration: {{data.smartPolicy.duration}} </p>
+<p> territorialScope: {{data.smartPolicy.territorialScope}} </p>
+<p> meansOfTransport: {{data.smartPolicy.meansOfTransport}} </p>
+<p> numSensors: {{data.smartPolicy.numSensors}} </p>
 <p> {{data.smartPolicy.conditions}} </p>
 <p> {{data.smartPolicy.policyId}} </p>
-<p> {{data.smartPolicy.clientAdress}} </p>
-<p> {{data.smartPolicy.insuranceAddress}} </p>
+<p> clientAdress: {{data.smartPolicy.clientAdress}} </p>
+<p> insuranceAddress: {{data.smartPolicy.insuranceAddress}} </p>
 <p> {{data.smartPolicy.brokerAdress}} </p>
 <p> {{data.smartPolicy.shipmentID}} </p>
 <p> {{data.smartPolicy.shipmentLiability}} </p>
@@ -27,8 +29,7 @@
 <p> {{data.smartPolicy.contractLiability}} </p>
     
 </mat-dialog-content>
-  
+
 <mat-dialog-actions>
     <button class="mat-raised-button"(click)="close()">Cancel</button>
-    <!-- <button class="mat-raised-button mat-primary" [mat-dialog-data]="data"cdkFocusInitial>Confirmar</button> -->
 </mat-dialog-actions>
