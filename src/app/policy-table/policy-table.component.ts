@@ -18,13 +18,18 @@ import { NewSmartPolicyDialogComponent } from "../new-smart-policy-dialog/new-sm
 })
 export class PolicyTableComponent implements OnInit {
   displayedColumns: string[] = [
-    "id",
-    "product",
-    "description",
-    "holderName",
-    "mailAdress",
-    "duration",
-    "actions"
+    "ID",
+    "Name",
+    "Holder CIF",
+    "Holder name",
+    "Product",
+    "Territorial Scope",
+    "Premium",
+    "Liability",
+    "Expiry",
+    "Description",
+    "Mail",
+    "Duration"
   ];
   dataSource: Policy[] = [];
 
