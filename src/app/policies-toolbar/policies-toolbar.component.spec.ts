@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PoliciesToolbarComponent } from './policies-toolbar.component';
 
 describe('PoliciesTopbarComponent', () => {
@@ -8,9 +7,8 @@ describe('PoliciesTopbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PoliciesToolbarComponent ]
-    })
-    .compileComponents();
+      declarations: [PoliciesToolbarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
