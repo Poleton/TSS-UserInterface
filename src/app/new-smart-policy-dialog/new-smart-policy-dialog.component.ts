@@ -21,6 +21,7 @@ export class NewSmartPolicyDialogComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   onSubmit(data: any){
     //this.http.post('https://ce6c86ca-84fd-42bb-9343-076993ac36fa.mock.pstmn.io', data)
    

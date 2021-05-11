@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { SmartPolicy } from '../models/smartPolicy.model';
 import { RestService } from '../services/rest.service';
 import { ViewDetailsDialogComponent } from '../view-details-dialog/view-details-dialog.component';
@@ -17,14 +17,18 @@ export class SmartPolicyTableComponent implements OnInit {
   dataSource : SmartPolicy[] = [];
   dialog: any;
 
-  constructor(private restService: RestService, public detailsDialog: MatDialog, private route: ActivatedRoute) { }
+  constructor(private restService: RestService, public detailsDialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
     this.restService.getSmartPolicies()
     .subscribe(rest => this.dataSource = rest);
    
   }
-  openDetailsDialog(smartPolicy: SmartPolicy){
+  openDetails(smartPolicy:SmartPolicy){
+    
+    this.router.navigateByUrl('view-details', {state: smartPolicy})
+  }
+  /* openDetailsDialog(smartPolicy: SmartPolicy){
     
     const dialogRef = this.detailsDialog.open(ViewDetailsDialogComponent, { 
       data: { 
@@ -39,6 +43,6 @@ export class SmartPolicyTableComponent implements OnInit {
     })*/
 
     //this.router.navigateByUrl('/smartpolicy-details');
-  }
+  //} 
 
 }

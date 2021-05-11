@@ -17,6 +17,8 @@ import { PoliciesToolbarComponent} from "./policies-toolbar/policies-toolbar.com
 import { NewPolicyDialogComponent } from './new-policy-dialog/new-policy-dialog.component';
 import { NewSmartPolicyDialogComponent } from './new-smart-policy-dialog/new-smart-policy-dialog.component';
 import { ViewDetailsDialogComponent } from './view-details-dialog/view-details-dialog.component';
+import { HomeComponent } from './home/home.component';
+import { ViewDetailsComponent } from './view-details/view-details.component';
 @NgModule({
   declarations: [
      AppComponent, 
@@ -25,7 +27,9 @@ import { ViewDetailsDialogComponent } from './view-details-dialog/view-details-d
      PoliciesToolbarComponent, 
      NewPolicyDialogComponent,
      NewSmartPolicyDialogComponent,
-     ViewDetailsDialogComponent
+     ViewDetailsDialogComponent,
+     HomeComponent,
+     ViewDetailsComponent
     ],
   imports: [
     BrowserModule,
