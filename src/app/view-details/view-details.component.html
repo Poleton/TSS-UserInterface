@@ -11,10 +11,10 @@
 <p> id: {{smartPolicy.id}} </p>
 <p> product: {{smartPolicy.product}} </p>
 <p> description: {{smartPolicy.description}} </p> 
-<p> holderName: {{smartPolicy.holderName}} </p>
-<p> mailAdress: {{data.smartPolicy.mailAdress}} </p>
-<p> duration: {{data.smartPolicy.duration}} </p>
-<p> territorialScope: {{data.smartPolicy.territorialScope}} </p>
+<p> holderName: {{smartPolicy.policyHolderName}} </p>
+<p> mailAdress: {{smartPolicy.mailAdress}} </p>
+<p> duration: {{smartPolicy.duration}} </p>
+<p> territorialScope: {{smartPolicy.territorialScope}} </p>
 <p> meansOfTransport: {{data.smartPolicy.meansOfTransport}} </p>
 <p> numSensors: {{data.smartPolicy.numSensors}} </p>
 <p> {{data.smartPolicy.conditions}} </p>
@@ -31,5 +31,5 @@
 <p> {{data.smartPolicy.levelMinimumRange}} </p>
 <p> {{data.smartPolicy.levelMaximumRange}} </p>
 <p> {{data.smartPolicy.percentualWeight}} </p>
-<p> {{data.smartPolicy.contractPremium}} </p>
-<p> {{data.smartPolicy.contractLiability}} </p>
+<p> Premium: {{smartPolicy.contractPremium}} </p>
+<p> Liability: {{smartPolicy.contractLiability}} </p>
