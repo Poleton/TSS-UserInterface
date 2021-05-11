@@ -17,7 +17,7 @@ export class RestService {
   //POL
   apiUrl = 'https://908bf3e7-ef91-4be0-8a03-a073bb10f567.mock.pstmn.io'; //policy
   apiDetails= 'https://5abe182e-3540-4e0f-9fbf-b6383bbe760f.mock.pstmn.io'; //smart policy
-  
+  apiSmart= 'https://5abe182e-3540-4e0f-9fbf-b6383bbe760f.mock.pstmn.io'//smart 
   constructor( private _http: HttpClient) { }
 
   getPolicies(){
@@ -25,7 +25,7 @@ export class RestService {
   }
 
   getSmartPolicies(){
-    return this._http.get<SmartPolicy[]>(this.apiUrl)
+    return this._http.get<SmartPolicy[]>(this.apiSmart)
   }
   /*getSmartPolicy(id:number){
      return this._http.get<SmartPolicy>(this.apiDetails);
