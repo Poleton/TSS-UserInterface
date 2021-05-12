@@ -11,13 +11,12 @@ export class RestService {
   //url will change depending on the user and the data
 
   //HUGO
-  //apiUrl = 'https://2be45dd2-c306-4db0-abf4-43d1405bafdb.mock.pstmn.io'; 
-  //apiDetails= 'https://2be45dd2-c306-4db0-abf4-43d1405bafdb.mock.pstmn.io/smartpolicy';
-
+  //apiUrl='https://b8ef9f0f-b95e-40f9-b956-200af58dde05.mock.pstmn.io'
+  //apiSmart= 'https://3e837851-ba83-40a0-b0b0-720ce39302f6.mock.pstmn.io';
   //POL
   apiUrl = 'https://908bf3e7-ef91-4be0-8a03-a073bb10f567.mock.pstmn.io'; //policy
   apiDetails= 'https://5abe182e-3540-4e0f-9fbf-b6383bbe760f.mock.pstmn.io'; //smart policy
-  apiSmart= 'https://5abe182e-3540-4e0f-9fbf-b6383bbe760f.mock.pstmn.io'//smart 
+  apiSmart= 'https://5abe182e-3540-4e0f-9fbf-b6383bbe760f.mock.pstmn.io';//smart 
   constructor( private _http: HttpClient) { }
 
   getPolicies(){

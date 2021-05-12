@@ -1,3 +1,5 @@
+import { Sensor } from "./sensor.model";
+
 export class SmartPolicy{
 
     //These are in common with the policy
@@ -9,6 +11,8 @@ export class SmartPolicy{
     contractPremium!: number;
     contractLiability!: number;
     expiryTimestamp!: number;
+
+    inceptionTimestamp!: number
     //Added for the customer, also in common
     description!: string;
     holderName!: string;
@@ -21,22 +25,16 @@ export class SmartPolicy{
     clientAdress!: string;
     insuranceAddress!: string;
     brokerAdress!: string;
-    shipmentID!:number;
-    shipmentLiability!:number;
+    shipmentID!: number;
+    shipmentLiability!: number;
 
     //MISSING MAP(String,SENSOR) *Do not put empty sensors!* 
 
-    sensorID!:number;
-    sensorType!:number;
-    levelDepth!:number;
-    levelType!:number;
-    levelMinimumRange!:number;
-    levelMaximumRange!:number;
-    percentualWeight!:number;
+    sensor!: string;
+    //sensors!:Sensor[];
 
     /*
     meansOfTransport!: string;
-    numSensors!: number;
     conditions!: string;
     */
     

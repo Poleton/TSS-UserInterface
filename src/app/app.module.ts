@@ -19,6 +19,7 @@ import { NewSmartPolicyDialogComponent } from './new-smart-policy-dialog/new-sma
 import { ViewDetailsDialogComponent } from './view-details-dialog/view-details-dialog.component';
 import { HomeComponent } from './home/home.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
 @NgModule({
   declarations: [
      AppComponent, 
@@ -29,7 +30,8 @@ import { ViewDetailsComponent } from './view-details/view-details.component';
      NewSmartPolicyDialogComponent,
      ViewDetailsDialogComponent,
      HomeComponent,
-     ViewDetailsComponent
+     ViewDetailsComponent,
+     TopBarComponent
     ],
   imports: [
     BrowserModule,

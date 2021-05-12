@@ -13,15 +13,14 @@ import { ViewDetailsDialogComponent } from '../view-details-dialog/view-details-
 })
 export class SmartPolicyTableComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'product', 'description', 'holderName', 'mailAdress', 'duration', 'details'];
+  displayedColumns: string[] = ['id', 'product', 'description', 'holderName', 'sensors', 'duration', 'details'];
   dataSource : SmartPolicy[] = [];
   dialog: any;
 
   constructor(private restService: RestService, public detailsDialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
-    this.restService.getSmartPolicies()
-    .subscribe(rest => this.dataSource = rest);
+    this.restService.getSmartPolicies().subscribe(rest => this.dataSource = rest);
    
   }
   openDetails(smartPolicy:SmartPolicy){
@@ -44,5 +43,4 @@ export class SmartPolicyTableComponent implements OnInit {
 
     //this.router.navigateByUrl('/smartpolicy-details');
   //} 
-
 }

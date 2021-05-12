@@ -11,9 +11,8 @@ import { ViewDetailsComponent } from './view-details/view-details.component';
 
 const routes: Routes = [ 
   {path:'home', component: HomeComponent },
-  {path:'view-details', component: ViewDetailsComponent}, // de momento dialog dsp cambiar por el no dialog
+  {path:'view-details', component: ViewDetailsComponent}, 
   {path: '', component: HomeComponent}
-
 ];
 
 @NgModule({

@@ -9,7 +9,7 @@ import { SmartPolicy } from '../models/smartPolicy.model';
 })
 export class ViewDetailsComponent implements OnInit {
 
-  smartPolicy!:any;
+  smartPolicy!:SmartPolicy;
   data:any;
   constructor(private activatedroute:ActivatedRoute, private router: Router) {
     //console.log(this.router.getCurrentNavigation().extras.state);
