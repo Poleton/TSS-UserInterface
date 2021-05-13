@@ -11,6 +11,7 @@ import {
   MAT_DIALOG_DATA
 } from "@angular/material/dialog";
 import { NewSmartPolicyDialogComponent } from "../new-smart-policy-dialog/new-smart-policy-dialog.component";
+import { LoginComponent } from "../login/login.component";
 @Component({
   selector: "app-policy-table",
   templateUrl: "./policy-table.component.html",
@@ -34,7 +35,6 @@ export class PolicyTableComponent implements OnInit {
     "actions"
   ];
   dataSource: Policy[] = [];
-
   constructor(private restService: RestService, public dialog: MatDialog) {}
 
   /*FILTERING PENDENT

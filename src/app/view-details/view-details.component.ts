@@ -11,7 +11,7 @@ export class ViewDetailsComponent implements OnInit {
 
   smartPolicy!:SmartPolicy;
   data:any;
-  constructor(private activatedroute:ActivatedRoute, private router: Router) {
+  constructor( private router: Router) {
     //console.log(this.router.getCurrentNavigation().extras.state);
    }
 
