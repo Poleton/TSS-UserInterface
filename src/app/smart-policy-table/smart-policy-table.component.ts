@@ -19,12 +19,8 @@ export class SmartPolicyTableComponent implements OnInit {
 
   constructor(private restService: RestService, public detailsDialog: MatDialog, private router: Router) { }
 
-  ngOnInit(): void {
-    this.restService.getSmartPolicies().subscribe(rest => this.dataSource = rest);
-   
-  }
+  
   openDetails(smartPolicy:SmartPolicy){
-    
     this.router.navigateByUrl('view-details', {state: smartPolicy})
   }
   /* openDetailsDialog(smartPolicy: SmartPolicy){
@@ -43,4 +39,8 @@ export class SmartPolicyTableComponent implements OnInit {
 
     //this.router.navigateByUrl('/smartpolicy-details');
   //} 
+  ngOnInit(): void {
+    this.restService.getSmartPolicies().subscribe(rest => this.dataSource = rest);
+   
+  }
 }

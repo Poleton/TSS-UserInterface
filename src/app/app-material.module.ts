@@ -11,6 +11,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [],
   imports: [
@@ -25,6 +26,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
      MatDialogModule,
      FormsModule,
      MatSlideToggleModule,
+     MatCardModule
     ],
   exports: [
     CommonModule, 
@@ -38,6 +40,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
     MatDialogModule,
     FormsModule,
     MatSlideToggleModule,
+    MatCardModule
   ]
 })
 export class AppMaterialModule {}

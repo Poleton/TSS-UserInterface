@@ -20,6 +20,7 @@ import { ViewDetailsDialogComponent } from './view-details-dialog/view-details-d
 import { HomeComponent } from './home/home.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
      AppComponent, 
@@ -31,7 +32,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
      ViewDetailsDialogComponent,
      HomeComponent,
      ViewDetailsComponent,
-     TopBarComponent
+     TopBarComponent,
+     LoginComponent
     ],
   imports: [
     BrowserModule,
