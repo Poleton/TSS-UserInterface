@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { Router } from '@angular/router';
 import { RestService } from '../services/rest.service';
-import { globalKey } from '../global-variables'
 
 @Component({
   selector: 'app-login',
@@ -13,7 +12,6 @@ import { globalKey } from '../global-variables'
 export class LoginComponent implements OnInit {
 
   text:string=""
-  msg:string=""
   key!:any
   info!: [] ;
   constructor(private restService: RestService, private router: Router) { }
@@ -33,9 +31,8 @@ export class LoginComponent implements OnInit {
         if(result.status==200){
           this.key=result.body
           console.warn("key", this.key)
-          sessionStorage.setItem(globalKey,"1234")
-          console.warn("globalKey", globalKey)
-          this.router.navigateByUrl('home',{state:{key:this.key}})
+          this.restService.setKey(this.key)
+          this.router.navigateByUrl('home')
         } 
       },
        (error) => {
@@ -43,9 +40,6 @@ export class LoginComponent implements OnInit {
         })
       
     console.warn(data) // borrar al acabar enseña user y password por consola
-  }
-  getKey(){
-    return this.key;
   }
 
 }

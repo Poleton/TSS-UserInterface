@@ -1,2 +1,0 @@
-
-export var globalKey:string;

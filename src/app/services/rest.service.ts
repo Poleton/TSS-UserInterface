@@ -8,7 +8,7 @@ import { SmartPolicy } from '../models/smartPolicy.model';
   providedIn: 'root'
 })
 export class RestService {
-  
+  key!:string;
   
   //url will change depending on the user and the data
   //HUGO
@@ -20,15 +20,20 @@ export class RestService {
   //apiUrl = 'https://04c3d35e-2d99-4b22-b6a9-ae8a4498e05b.mock.pstmn.io/'; //policy
   //apiDetails= 'https://5abe182e-3540-4e0f-9fbf-b6383bbe760f.mock.pstmn.io'; //smart policy
   //apiSmart= 'https://5abe182e-3540-4e0f-9fbf-b6383bbe760f.mock.pstmn.io';//smart 
+
   loginCorrect='https://fde385b2-b4e8-4b78-81ec-10238ef16999.mock.pstmn.io?id=1234';
 
-  smartPolUrl= 'https://localhost:8080/users/1/api/smart-policies'    
-  policiesUrl= 'https://localhost:8080/users/1/api/policies'   
-  alertsUrl= 'https://localhost:8080/users/1/api/smart-policies/1/alerts'
+  smartPolUrl= 'https://localhost:8080/users/'+this.key+'/api/smart-policies';    
+  policiesUrl= 'https://localhost:8080/users/'+this.key+'/api/policies';   
+  alertsUrl= 'https://localhost:8080/users/'+this.key+'/api/smart-policies/1/alerts';
   
   constructor( private _http: HttpClient) {
   }
 
+  public setKey(_key:string){
+    this.key=_key
+    console.warn("servicekey", this.key)
+  }
 
   getPolicies(){
     return this._http.get<Policy[]>(this.policiesUrl)
