@@ -11,22 +11,25 @@ export class RestService {
   key!:string;
   
   //url will change depending on the user and the data
-  //HUGO
+  //HUGO POSTMAN
   //apiUrl='https://b8ef9f0f-b95e-40f9-b956-200af58dde05.mock.pstmn.io'
   //posPolicy='https://b8ef9f0f-b95e-40f9-b956-200af58dde05.mock.pstmn.io';
   //smart= 'https://3e837851-ba83-40a0-b0b0-720ce39302f6.mock.pstmn.io';
   //getPol='https://b8ef9f0f-b95e-40f9-b956-200af58dde05.mock.pstmn.io';
-  //POL
-  //apiUrl = 'https://04c3d35e-2d99-4b22-b6a9-ae8a4498e05b.mock.pstmn.io/'; //policy
-  //apiDetails= 'https://5abe182e-3540-4e0f-9fbf-b6383bbe760f.mock.pstmn.io'; //smart policy
-  //apiSmart= 'https://5abe182e-3540-4e0f-9fbf-b6383bbe760f.mock.pstmn.io';//smart 
+  
+  //POL POSTMAN
+  loginCorrect='https://fde385b2-b4e8-4b78-81ec-10238ef16999.mock.pstmn.io?id=1234';
 
+  policiesUrl = 'https://04c3d35e-2d99-4b22-b6a9-ae8a4498e05b.mock.pstmn.io/'; //policy
+  smartPolUrl= 'https://5abe182e-3540-4e0f-9fbf-b6383bbe760f.mock.pstmn.io'; //smart policy
+  alertsUrl= '';//alerts 
+/*
   loginCorrect='https://fde385b2-b4e8-4b78-81ec-10238ef16999.mock.pstmn.io?id=1234';
 
   smartPolUrl= 'https://localhost:8080/users/'+this.key+'/api/smart-policies';    
   policiesUrl= 'https://localhost:8080/users/'+this.key+'/api/policies';   
   alertsUrl= 'https://localhost:8080/users/'+this.key+'/api/smart-policies/1/alerts';
-  
+*/  
   constructor( private _http: HttpClient) {
   }
 
