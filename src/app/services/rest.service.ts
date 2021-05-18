@@ -21,9 +21,7 @@ export class RestService {
   loginCorrect='https://fde385b2-b4e8-4b78-81ec-10238ef16999.mock.pstmn.io?id=1234';
 
   policiesUrl = 'https://04c3d35e-2d99-4b22-b6a9-ae8a4498e05b.mock.pstmn.io/'; //policy
-  //smartPolUrl= 'https://04c3d35e-2d99-4b22-b6a9-ae8a4498e05b.mock.pstmn.io/'; //smart policy
   smartPolUrl = 'https://703c5070-c48b-489f-95e8-40e4fb1dcdb3.mock.pstmn.io'; //smart policy
-
   alertsUrl= '';//alerts 
 /*
   loginCorrect='https://fde385b2-b4e8-4b78-81ec-10238ef16999.mock.pstmn.io?id=1234';

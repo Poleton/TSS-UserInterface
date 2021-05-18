@@ -1,8 +1,8 @@
 export class Sensor {
-    id!: number;
     sensorName!: string;
     checked?: boolean;
-
+    
+    type!: number;
     levelDepth!: number;
     levelMinimumRange!: number;
     levelMaximumRange!: number;
