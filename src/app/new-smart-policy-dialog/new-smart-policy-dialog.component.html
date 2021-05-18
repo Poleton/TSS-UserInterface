@@ -3,19 +3,29 @@
     <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
         <p>{{this.id}}</p>
 
-        <input type="text" name="policyId" ngModel placeholder="policyId"> <br> <br>
-        <input type="text" name="contractAddress" ngModel placeholder="contractAddress"> <br> <br>
-        <input type="text" name="clientAddress" ngModel placeholder="clientAddress"> <br> <br>
-        <input type="text" name="insuranceAddress" ngModel placeholder="insuranceAddress"> <br> <br>
-        <input type="text" name="brokerAdress" ngModel placeholder="brokerAdress"> <br> <br>
-        <input type="text" name="shipmentId" ngModel placeholder="shipmentId"> <br> <br>
-        <input type="text" name="shipmentLiability" ngModel placeholder="shipmentLiability"> <br> <br>
+        <input type="text" name="policyId" ngModel placeholder="Policy Id"> <br> <br>
+        <input type="text" name="contractAddress" ngModel placeholder="Contract Address"> <br> <br>
+        <input type="text" name="clientAddress" ngModel placeholder="Client Address"> <br> <br>
+        <input type="text" name="insuranceAddress" ngModel placeholder="Insurance Address"> <br> <br>
+        <input type="text" name="brokerAdress" ngModel placeholder="Broker Adress"> <br> <br>
+        <input type="text" name="shipmentId" ngModel placeholder="Shipment Id"> <br> <br>
+        <input type="text" name="shipmentLiability" ngModel placeholder="Shipment Liability"> <br> <br>
          
         
-        <!--Sensors SISTEMA MAP CON CHECKBOX
-        <div *ngFor="let sensor of sensors">
-            <input type="checkbox" (change)="onChange(sensor.name, $event.target.checked)" />
-            {{ cartoon.name }}-->
+        <!--Sensors SISTEMA MAP CON CHECKBOX-->
+        <input type="checkbox" name="sensor" ngModel> Temperature sensor <br> <br>
+
+        <input type="number" name="levelDepth" ngModel placeholder="Level Depth"> <br> <br>
+        <input type="number" name="levelMinimumRange" ngModel placeholder="min. range"> <br> <br>
+        <input type="number" name="levelMaximumRange" ngModel placeholder="max. range"> <br> <br>
+        <input type="number" name="percentualWeight" ngModel placeholder="% Weight"> <br> <br>
+
+       <!-- <li *ngFor="let sensor of sensors">
+            <input type="checkbox" [(ngModel)]="sensor.checked" />
+            <label>{{ sensor.sensorName }}</label>
+        </li> You have chosen 
+        <pre>{{this.selectedCheckboxList | json}}</pre>-->
+
 
         <button class="mat-raised-button" type="submit"> Create </button>
       </form>

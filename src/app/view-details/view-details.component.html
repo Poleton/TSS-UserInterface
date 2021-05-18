@@ -1,24 +1,30 @@
 <button mat-icon-button (click)="onClick()">
-    <mat-icon> arrow_back </mat-icon>
+  <mat-icon> arrow_back </mat-icon>
 </button>
-    
-<br>
-<h1>Smart Policy Details: </h1>
-<p> Product: {{smartPolicy.product}} </p>
-<p> Description: {{smartPolicy.description}} </p> 
-<p> HolderName: {{smartPolicy.policyHolderName}} </p>
-<p> MailAdress: {{smartPolicy.mailAdress}} </p>
-<p> Duration: {{smartPolicy.duration}} </p>
-<p> Territorial Scope: {{smartPolicy.territorialScope}} </p>
-<p> Policy Id: {{smartPolicy.policyId}} </p>
-<p> clientAdress: {{smartPolicy.clientAdress}} </p>
-<p> Insurance Address: {{smartPolicy.insuranceAddress}} </p>
-<p> Broker Address: {{smartPolicy.brokerAdress}} </p>
-<p> Shipment Id: {{smartPolicy.shipmentID}} </p>
-<p> Shipment Liability: {{smartPolicy.shipmentLiability}} </p>
+
+<br />
+<h1>Smart Policy Details:</h1>
+<p>Product: {{ smartPolicy.product }}</p>
+<p>Description: {{ smartPolicy.description }}</p>
+<p>HolderName: {{ smartPolicy.policyHolderName }}</p>
+<p>MailAdress: {{ smartPolicy.mailAdress }}</p>
+<p>Duration: {{ smartPolicy.duration }}</p>
+<p>Territorial Scope: {{ smartPolicy.territorialScope }}</p>
+<p>Policy Id: {{ smartPolicy.policyId }}</p>
+<p>clientAdress: {{ smartPolicy.clientAdress }}</p>
+<p>Insurance Address: {{ smartPolicy.insuranceAddress }}</p>
+<p>Broker Address: {{ smartPolicy.brokerAdress }}</p>
+<p>Shipment Id: {{ smartPolicy.shipmentID }}</p>
+<p>Shipment Liability: {{ smartPolicy.shipmentLiability }}</p>
+
 <p> Sensor Id: {{smartPolicy.sensor}} </p>
+<p>     ID: {{sensor.id}}</p>
+<p>     Name: {{sensor.sensorName}}</p>
 <p>     Level Depth: {{sensor.levelDepth}}</p>
 <p>     Level Min: {{sensor.levelMinimumRange}}</p>
 <p>     Level Max: {{sensor.levelMaximumRange}}</p>
-<p> Premium: {{smartPolicy.contractPremium}} </p>
-<p> Liability: {{smartPolicy.contractLiability}} </p>
+<p>     % Weight: {{sensor.percentualWeight}}</p>
+
+
+<p>Premium: {{ smartPolicy.contractPremium }}</p>
+<p>Liability: {{ smartPolicy.contractLiability }}</p>
