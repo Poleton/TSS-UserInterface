@@ -10,8 +10,12 @@
         <input type="text" name="brokerAdress" ngModel placeholder="brokerAdress"> <br> <br>
         <input type="text" name="shipmentId" ngModel placeholder="shipmentId"> <br> <br>
         <input type="text" name="shipmentLiability" ngModel placeholder="shipmentLiability"> <br> <br>
+         
         
-        <!--Sensors SISTEMA MAP CON CHECKBOX-->
+        <!--Sensors SISTEMA MAP CON CHECKBOX
+        <div *ngFor="let sensor of sensors">
+            <input type="checkbox" (change)="onChange(sensor.name, $event.target.checked)" />
+            {{ cartoon.name }}-->
 
         <button class="mat-raised-button" type="submit"> Create </button>
       </form>

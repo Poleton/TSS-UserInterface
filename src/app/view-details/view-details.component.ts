@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SmartPolicy } from '../models/smartPolicy.model';
-
+import { Sensor } from '../models/sensor.model';
 @Component({
   selector: 'app-view-details',
   templateUrl: './view-details.component.html',
@@ -10,6 +10,8 @@ import { SmartPolicy } from '../models/smartPolicy.model';
 export class ViewDetailsComponent implements OnInit {
 
   smartPolicy!:SmartPolicy;
+  sensor!: Sensor;
+
   data:any;
   constructor( private router: Router) {
     //console.log(this.router.getCurrentNavigation().extras.state);
@@ -20,6 +22,7 @@ export class ViewDetailsComponent implements OnInit {
       this.smartpolicy=data;
   }) */
     this.smartPolicy=history.state;
+    this.sensor=history.state;
   }
 
   onClick(){
