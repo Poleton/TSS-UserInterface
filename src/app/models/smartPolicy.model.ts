@@ -1,5 +1,3 @@
-import { Sensor } from "./sensor.model";
-
 export class SmartPolicy{
 
     //These are in common with the policy
