@@ -7,7 +7,6 @@ import { LoginComponent } from './login/login.component';
 import { SmartPolicy } from './models/smartPolicy.model';
 import { PolicyTableComponent } from './policy-table/policy-table.component';
 import { SmartPolicyTableComponent } from './smart-policy-table/smart-policy-table.component';
-import { ViewDetailsDialogComponent } from './view-details-dialog/view-details-dialog.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
 
 const routes: Routes = [ 

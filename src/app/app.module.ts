@@ -16,7 +16,6 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { PoliciesToolbarComponent} from "./policies-toolbar/policies-toolbar.component";
 import { NewPolicyDialogComponent } from './new-policy-dialog/new-policy-dialog.component';
 import { NewSmartPolicyDialogComponent } from './new-smart-policy-dialog/new-smart-policy-dialog.component';
-import { ViewDetailsDialogComponent } from './view-details-dialog/view-details-dialog.component';
 import { HomeComponent } from './home/home.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -30,7 +29,6 @@ import { SmartPoliciesToolbarComponent } from './smart-policies-toolbar/smart-po
      PoliciesToolbarComponent, 
      NewPolicyDialogComponent,
      NewSmartPolicyDialogComponent,
-     ViewDetailsDialogComponent,
      HomeComponent,
      ViewDetailsComponent,
      TopBarComponent,

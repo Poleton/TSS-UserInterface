@@ -4,7 +4,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { SmartPolicy } from '../models/smartPolicy.model';
 import { RestService } from '../services/rest.service';
-import { ViewDetailsDialogComponent } from '../view-details-dialog/view-details-dialog.component';
 
 @Component({
   selector: 'app-smart-policy-table',

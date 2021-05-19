@@ -1,31 +1,39 @@
 <button mat-icon-button (click)="onClick()">
   <mat-icon> arrow_back </mat-icon>
 </button>
-
-<br />
-<h1>Smart Policy Details:</h1>
-<p>Product: {{ smartPolicy.product }}</p>
-<p>Description: {{ smartPolicy.description }}</p>
-<p>HolderName: {{ smartPolicy.policyHolderName }}</p>
-<p>MailAdress: {{ smartPolicy.mailAdress }}</p>
-<p>Duration: {{ smartPolicy.duration }}</p>
-<p>Territorial Scope: {{ smartPolicy.territorialScope }}</p>
-<p>Policy Id: {{ smartPolicy.policyId }}</p>
-<p>clientAdress: {{ smartPolicy.clientAdress }}</p>
-<p>Insurance Address: {{ smartPolicy.insuranceAddress }}</p>
-<p>Broker Address: {{ smartPolicy.brokerAdress }}</p>
-<p>Shipment Id: {{ smartPolicy.shipmentID }}</p>
-<p>Shipment Liability: {{ smartPolicy.shipmentLiability }}</p>
-
-<p> Sensor Id: {{smartPolicy.sensor}} </p>
-
-<p>     Name: {{sensor.sensorName}}</p>
-<p>     Type: {{sensor.type}}</p>
-<p>     Level Depth: {{sensor.levelDepth}}</p>
-<p>     Level Min: {{sensor.levelMinimumRange}}</p>
-<p>     Level Max: {{sensor.levelMaximumRange}}</p>
-<p>     % Weight: {{sensor.percentualWeight}}</p>
-
-
-<p>Premium: {{ smartPolicy.contractPremium }}</p>
-<p>Liability: {{ smartPolicy.contractLiability }}</p>
+  <h1>Smart Policy Details:</h1>
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+    <br>
+    <p>Product: {{smartPolicy.product }}</p> <br>
+    <p>Description: {{ smartPolicy.description }}</p><br>
+    <p>HolderName: {{ smartPolicy.policyHolderName }}</p><br>
+    <p>MailAdress: {{ smartPolicy.mailAdress }}</p><br>
+    <p>Duration: {{ smartPolicy.duration }}</p><br>
+    <p>Territorial Scope: {{ smartPolicy.territorialScope }}</p><br>
+    <p>Policy Id: {{ smartPolicy.policyId }}</p><br>
+    <p>clientAdress: {{ smartPolicy.clientAdress }}</p><br>
+    <p>Insurance Address: {{ smartPolicy.insuranceAddress }}</p><br>
+    <p>Broker Address: {{ smartPolicy.brokerAdress }}</p><br>
+    <p>Shipment Id: {{ smartPolicy.shipmentID }}</p><br>
+    <p>Shipment Liability: {{ smartPolicy.shipmentLiability }}</p><br>
+    <p>Premium: {{ smartPolicy.contractPremium }}</p><br>
+    <p>Liability: {{ smartPolicy.contractLiability }}</p><br>
+  </mat-grid-tile>
+  
+  <mat-grid-tile>
+    <p> Sensor Id: {{smartPolicy.sensor}} </p>
+    <p>     Name: {{sensor.sensorName}}</p>
+    <p>     Type: {{sensor.type}}</p>
+    <p>     Level Depth: {{sensor.levelDepth}}</p>
+    <p>     Level Min: {{sensor.levelMinimumRange}}</p>
+    <p>     Level Max: {{sensor.levelMaximumRange}}</p>
+    <p>     % Weight: {{sensor.percentualWeight}}</p>
+  </mat-grid-tile>
+  
+  <h1>Alerts</h1>
+  <mat-grid-tile>
+    Aqui Alerts
+  </mat-grid-tile>
+  <mat-grid-tile>aqui nada de momento</mat-grid-tile>
+</mat-grid-list>
