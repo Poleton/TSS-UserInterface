@@ -1,37 +1,30 @@
-<h1 mat-dialog-title> Convert to smart policy </h1> 
-<mat-dialog-content>
-    <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
-        <p>{{this.id}}</p>
+<html>
+<head> </head>
+<body>
+  <h1 mat-dialog-title> Convert to smart policy </h1>
+  <mat-dialog-content>
+      <!-- <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)"> -->
 
-        <input type="number" id="quantity" name="policyId" ngModel placeholder="Policy Id"> {{this.id}} <br> <br>
-        <input type="text" name="contractAddress" ngModel placeholder="Contract Address"> <br> <br>
-        <input type="text" name="clientAddress" ngModel placeholder="Client Address"> <br> <br>
-        <input type="text" name="insuranceAddress" ngModel placeholder="Insurance Address"> <br> <br>
-        <input type="text" name="brokerAdress" ngModel placeholder="Broker Adress"> <br> <br>
-        <input type="number" id="quantity" name="shipmentId" ngModel placeholder="Shipment Id"> <br> <br>
-        <input type="number" id="quantity" name="shipmentLiability" ngModel placeholder="Shipment Liability"> <br> <br>
-         
-        
-        <!--Sensors SISTEMA MAP CON CHECKBOX-->
-        <input type="checkbox" name="sensor" ngModel> Temperature sensor <br> <br>
+    <!--poner el puto id-->
+    <input type="text" id="policyId" name="policyId" [(ngModel)]="policyId" placeholder="policyId"> <br> <br>
+    <!--<input type="text" id="policyId" placeholder="Policy Id">  <br> <br> -->
+    <input type="number" id="shipmentId" name="shipmentId" [(ngModel)]="shipmentId" ngModel placeholder="Shipment Id"> <br> <br>
+    <input type="number" id="shipmentLiability" name="shipmentLiability" [(ngModel)]="shipmentLiability" ngModel placeholder="Shipment Liability"> <br> <br>
 
-        <input type="number" name="levelDepth" ngModel placeholder="Level Depth"> <br> <br>
-        <input type="number" name="levelMinimumRange" ngModel placeholder="min. range"> <br> <br>
-        <input type="number" name="levelMaximumRange" ngModel placeholder="max. range"> <br> <br>
-        <input type="number" name="percentualWeight" ngModel placeholder="% Weight"> <br> <br>
+    <!--Sensors SISTEMA MAP CON CHECKBOX-->
+    <input type="checkbox" name="sensor" ngModel> temperature <br> <br>
 
-       <!-- <li *ngFor="let sensor of sensors">
-            <input type="checkbox" [(ngModel)]="sensor.checked" />
-            <label>{{ sensor.sensorName }}</label>
-        </li> You have chosen 
-        <pre>{{this.selectedCheckboxList | json}}</pre>-->
+    <input type="number" name="levelDepth" ngModel placeholder="Level Depth"> <br> <br>
+    <input type="number" name="levelMinimumRange" ngModel placeholder="min. range"> <br> <br>
+    <input type="number" name="levelMaximumRange" ngModel placeholder="max. range"> <br> <br>
+    <input type="number" name="percentualWeight" ngModel placeholder="% Weight"> <br> <br>
 
+    <button class="mat-raised-button" type="submit" (click)="onSubmit()"> Create </button>
+       <!-- </form> -->
+  </mat-dialog-content>
 
-        <button class="mat-raised-button" type="submit"> Create </button>
-      </form>
-</mat-dialog-content>
-  
-<mat-dialog-actions>
+  <mat-dialog-actions>
     <button class="mat-raised-button"(click)="close()">Cancel</button>
-    <!-- <button class="mat-raised-button mat-primary" [mat-dialog-data]="data"cdkFocusInitial>Confirmar</button> -->
-</mat-dialog-actions>
+  </mat-dialog-actions>
+</body>
+</html>

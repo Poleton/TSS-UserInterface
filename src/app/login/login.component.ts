@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         if(result.status==200){
           this.key=result.body
           console.warn("key", this.key)
-          this.restService.setKey(this.key)
+          this.restService.setKey(this.key.toString())
           this.router.navigateByUrl('home')
         } 
       },

@@ -12,6 +12,10 @@ import { Sensor } from '../models/sensor.model';
 export class NewSmartPolicyDialogComponent implements OnInit {
   id!: number;
   sensors!: Sensor[];
+  policyId: any;
+  shipmentId: any;
+  shipmentLiability:any;
+
   constructor(
     //public id: number,
     private http: HttpClient,
@@ -20,46 +24,13 @@ export class NewSmartPolicyDialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    ///PROVA SENSORS///
-    /*    this.sensors = [
-      {
-        id:1,
-        sensorName: "Temperature",
-        checked!: false,
-
-        levelDepth!: 1,
-        levelMinimumRange!: -10,
-        levelMaximumRange!: 20,
-        percentualWeight!: 20
-
-      },
-      {
-        id:2,
-        sensorName: "Pressure",
-        checked!: false,
-
-        levelDepth!: 2,
-        levelMinimumRange!: -20,
-        levelMaximumRange!: 30,
-        percentualWeight!: 40
-
-      }
-    ];
-  }
-  get selectedCheckboxList() {
-    return this.sensors.filter(item => item.checked);
-  }
-*/
-    /////////////////////////////////////////////////////
   }
 
-  
-
-  onSubmit(data: any) {
-    this.restService.postSmartPolicy(data).subscribe((result) => {
+  onSubmit() {
+   /* this.restService.postSmartPolicy(data).subscribe((result) => {
       console.warn('result', result);
-    });
-    console.warn(data);
+    }); */
+    console.warn("fff",this.policyId);
     this.dialogRef.close();
   }
 

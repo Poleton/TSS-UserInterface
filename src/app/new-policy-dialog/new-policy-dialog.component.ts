@@ -25,7 +25,7 @@ onSubmit(data: any){
   console.warn(data)
   this.dialogRef.close();*/
 
-  this.restService.postSmartPolicy(data)
+  this.restService.postPolicy(data)
     .subscribe((result)=>{
       console.warn("result", result)
     })
