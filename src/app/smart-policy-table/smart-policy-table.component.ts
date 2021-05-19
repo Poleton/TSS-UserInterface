@@ -17,16 +17,19 @@ export class SmartPolicyTableComponent implements OnInit {
   dataSource : SmartPolicy[] = [];
   dialog: any;
   alerts: Alert[] =[];
+  map = new Map();
 
   constructor(private restService: RestService, public detailsDialog: MatDialog, private router: Router) { }
 
   
-  openDetails(smartPolicy:SmartPolicy){
-    this.router.navigateByUrl('view-details', {state: {smart: smartPolicy, alerts: this.alerts}})
+  openDetails(smartPolicy:SmartPolicy, id:number){
+    this.router.navigateByUrl('view-details', {state: {smart: smartPolicy, alerts: this.map.get(id)}})
+    this.map.delete(id)
   }
 
   getAlertsSmart(id:number){
     this.restService.getAlerts(id).subscribe((rest) => this.alerts = rest)
+    this.map.set(id, this.alerts);
     return this.alerts
   }
 
