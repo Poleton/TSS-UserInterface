@@ -7,12 +7,12 @@ table {
 }
 
 .mat-cell {
+  font-size:medium;
   color: black;
 }
 
 .mat-header-cell {
+  color: white;
   background-color: grey;
-}
-.mat-header-cell {
   font-size:medium;
 }

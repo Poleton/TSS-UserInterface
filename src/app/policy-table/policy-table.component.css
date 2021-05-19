@@ -15,6 +15,7 @@
 }
 
 .mat-header-cell {
+  color:white;
   background-color: grey;
   word-wrap: initial;
   font-size: medium;
