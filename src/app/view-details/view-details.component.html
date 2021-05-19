@@ -1,12 +1,12 @@
 <button mat-icon-button (click)="onClick()">
   <mat-icon> arrow_back </mat-icon>
 </button>
-  <h1>Smart Policy Details:</h1>
-<mat-grid-list cols="2" rowHeight="2:1">
+  <h1>&nbsp; Smart Policy Details and Alerts:</h1>
+<!-- <mat-grid-list cols="2" rowHeight="2:1">
   <mat-grid-tile>
     <br>
-    <p>Product: {{smartPolicy.product }}</p> <br>
-    <p>Description: {{ smartPolicy.description }}</p><br>
+    <a>Product: {{smartPolicy.product }}</a> <br>
+    <a>Description: {{ smartPolicy.description }}</a><br>
     <p>HolderName: {{ smartPolicy.policyHolderName }}</p><br>
     <p>MailAdress: {{ smartPolicy.mailAdress }}</p><br>
     <p>Duration: {{ smartPolicy.duration }}</p><br>
@@ -36,4 +36,53 @@
     Aqui Alerts
   </mat-grid-tile>
   <mat-grid-tile>aqui nada de momento</mat-grid-tile>
-</mat-grid-list>
+</mat-grid-list> 
+-->
+<mat-accordion>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Details
+      </mat-panel-title>
+      <mat-panel-description>
+        Smart policy information
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Product: {{smartPolicy.product }}</p> 
+    <p>Description: {{ smartPolicy.description }}</p>
+    <p>HolderName: {{ smartPolicy.policyHolderName }}</p>
+    <p>MailAdress: {{ smartPolicy.mailAdress }}</p>
+    <p>Duration: {{ smartPolicy.duration }}</p>
+    <p>Territorial Scope: {{ smartPolicy.territorialScope }}</p>
+    <p>Policy Id: {{ smartPolicy.policyId }}</p>
+    <p>clientAdress: {{ smartPolicy.clientAdress }}</p>
+    <p>Insurance Address: {{ smartPolicy.insuranceAddress }}</p>
+    <p>Broker Address: {{ smartPolicy.brokerAdress }}</p>
+    <p>Shipment Id: {{ smartPolicy.shipmentID }}</p>
+    <p>Shipment Liability: {{ smartPolicy.shipmentLiability }}</p>
+    <p>Premium: {{ smartPolicy.contractPremium }}</p>
+    <p>Liability: {{ smartPolicy.contractLiability }}</p>
+
+    <p> Sensor Id: {{smartPolicy.sensor}} </p>
+    <p> Name: {{sensor.sensorName}}</p>
+    <p> Type: {{sensor.type}}</p>
+    <p> Level Depth: {{sensor.levelDepth}}</p>
+    <p> Level Min: {{sensor.levelMinimumRange}}</p>
+    <p> Level Max: {{sensor.levelMaximumRange}}</p>
+    <p> % Weight: {{sensor.percentualWeight}}</p>
+
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Alerts
+      </mat-panel-title>
+      <mat-panel-description>
+        current alerts
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>aqui alertas</p>
+  </mat-expansion-panel>
+</mat-accordion>

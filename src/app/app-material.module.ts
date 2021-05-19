@@ -13,6 +13,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatExpansionModule} from '@angular/material/expansion';
 @NgModule({
   declarations: [],
   imports: [
@@ -28,7 +29,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
      FormsModule,
      MatSlideToggleModule,
      MatCardModule,
-     MatGridListModule
+     MatGridListModule,
+     MatExpansionModule
     ],
   exports: [
     CommonModule, 
@@ -43,7 +45,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     FormsModule,
     MatSlideToggleModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatExpansionModule
   ]
 })
 export class AppMaterialModule {}
