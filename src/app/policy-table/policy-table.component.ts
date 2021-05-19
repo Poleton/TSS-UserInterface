@@ -34,7 +34,9 @@ export class PolicyTableComponent implements OnInit {
     "duration",
     "actions"
   ];
-  dataSource: Policy[] = [];
+  //dataSource: Policy[] = [];
+  //dataSource= new MatTableDataSource<Policy>([]);
+  dataSource:Policy[]=[]
   constructor(private restService: RestService, public dialog: MatDialog) {}
 
   /*FILTERING PENDENT
@@ -54,8 +56,11 @@ export class PolicyTableComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+  public refresh(){
+    this.restService.getPolicies().subscribe(rest => (this.dataSource= rest))
+  }
 
   ngOnInit() {
-    this.restService.getPolicies().subscribe(rest => (this.dataSource = rest));
+    this.restService.getPolicies().subscribe(rest => (this.dataSource= rest))
   }
 }

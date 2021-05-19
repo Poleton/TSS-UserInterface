@@ -1,5 +1,9 @@
 
     <mat-toolbar color="warn">
+        <a> Refresh &nbsp; </a>
+        <button mat-mini-fab (click)="refresh_()"> 
+            <mat-icon> refresh </mat-icon>
+        </button>
         <span class="fill-space"> </span>
         <a> Create New Policy &nbsp; </a>
             <button mat-mini-fab (click)="openDialog()"> 

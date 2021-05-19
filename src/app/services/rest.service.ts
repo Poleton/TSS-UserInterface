@@ -15,12 +15,12 @@ export class RestService {
   //apiUrl='https://b8ef9f0f-b95e-40f9-b956-200af58dde05.mock.pstmn.io'
   //posPolicy='https://b8ef9f0f-b95e-40f9-b956-200af58dde05.mock.pstmn.io';
   //smart= 'https://3e837851-ba83-40a0-b0b0-720ce39302f6.mock.pstmn.io';
-  //getPol='https://b8ef9f0f-b95e-40f9-b956-200af58dde05.mock.pstmn.io';
+  policiesUrl='https://b8ef9f0f-b95e-40f9-b956-200af58dde05.mock.pstmn.io';
   
   //POL POSTMAN
   loginCorrect='https://fde385b2-b4e8-4b78-81ec-10238ef16999.mock.pstmn.io?id=1234';
 
-  policiesUrl = 'https://04c3d35e-2d99-4b22-b6a9-ae8a4498e05b.mock.pstmn.io/'; //policy
+  //policiesUrl = 'https://04c3d35e-2d99-4b22-b6a9-ae8a4498e05b.mock.pstmn.io/'; //policy
   smartPolUrl = 'https://703c5070-c48b-489f-95e8-40e4fb1dcdb3.mock.pstmn.io'; //smart policy
   alertsUrl= '';//alerts 
 /*

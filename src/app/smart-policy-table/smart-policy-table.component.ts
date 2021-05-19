@@ -23,24 +23,12 @@ export class SmartPolicyTableComponent implements OnInit {
   openDetails(smartPolicy:SmartPolicy){
     this.router.navigateByUrl('view-details', {state: smartPolicy})
   }
-  /* openDetailsDialog(smartPolicy: SmartPolicy){
-    
-    const dialogRef = this.detailsDialog.open(ViewDetailsDialogComponent, { 
-      data: { 
-        smartPolicy
-      }
-    });
-    //para testear que se pasa la smartpolicy correctamente
-    console.log(smartPolicy)
-    
-    /*this.route.params.subscribe(params=>{
-      this.data
-    })*/
 
-    //this.router.navigateByUrl('/smartpolicy-details');
-  //} 
+  public refresh(){
+    this.restService.getSmartPolicies().subscribe(rest => this.dataSource = rest);
+  }
+  
   ngOnInit(): void {
     this.restService.getSmartPolicies().subscribe(rest => this.dataSource = rest);
-   
   }
 }
