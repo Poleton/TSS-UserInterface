@@ -83,6 +83,14 @@
         current alerts
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>aqui alertas</p>
+    <tr *ngFor="let item of alerts">
+      <p>State: {{item.state}}</p>
+      <p>Level Id: {{item.levelId}}</p>
+      <p>Sensor Type: {{item.sensorType}}</p>
+      <p>Sensor Data: {{item.sensorData}}</p>
+      <p>Data Excess: {{item.dataExcess}}</p>
+      <p>Level Excess Time: {{item.levelExcessTime}}</p>
+      <p>Contract Reserve: {{item.contractReserve}}</p>
+  </tr>
   </mat-expansion-panel>
 </mat-accordion>

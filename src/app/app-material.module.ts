@@ -14,6 +14,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatBadgeModule} from '@angular/material/badge';
 @NgModule({
   declarations: [],
   imports: [
@@ -30,7 +31,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
      MatSlideToggleModule,
      MatCardModule,
      MatGridListModule,
-     MatExpansionModule
+     MatExpansionModule,
+     MatBadgeModule
     ],
   exports: [
     CommonModule, 
@@ -46,7 +48,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatSlideToggleModule,
     MatCardModule,
     MatGridListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatBadgeModule
   ]
 })
 export class AppMaterialModule {}
