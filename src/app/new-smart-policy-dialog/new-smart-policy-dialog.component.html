@@ -3,13 +3,13 @@
     <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
         <p>{{this.id}}</p>
 
-        <input type="text" name="policyId" ngModel placeholder="Policy Id"> <br> <br>
+        <input type="number" id="quantity" name="policyId" ngModel placeholder="Policy Id"> <br> <br>
         <input type="text" name="contractAddress" ngModel placeholder="Contract Address"> <br> <br>
         <input type="text" name="clientAddress" ngModel placeholder="Client Address"> <br> <br>
         <input type="text" name="insuranceAddress" ngModel placeholder="Insurance Address"> <br> <br>
         <input type="text" name="brokerAdress" ngModel placeholder="Broker Adress"> <br> <br>
-        <input type="text" name="shipmentId" ngModel placeholder="Shipment Id"> <br> <br>
-        <input type="text" name="shipmentLiability" ngModel placeholder="Shipment Liability"> <br> <br>
+        <input type="number" id="quantity" name="shipmentId" ngModel placeholder="Shipment Id"> <br> <br>
+        <input type="number" id="quantity" name="shipmentLiability" ngModel placeholder="Shipment Liability"> <br> <br>
          
         
         <!--Sensors SISTEMA MAP CON CHECKBOX-->

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { Alert } from '../models/alert.model';
 import { SmartPolicy } from '../models/smartPolicy.model';
 import { RestService } from '../services/rest.service';
 
@@ -15,12 +16,18 @@ export class SmartPolicyTableComponent implements OnInit {
   displayedColumns: string[] = ['id', 'product', 'description', 'holderName', 'sensors', 'duration', 'details'];
   dataSource : SmartPolicy[] = [];
   dialog: any;
+  alerts: Alert[] =[];
 
   constructor(private restService: RestService, public detailsDialog: MatDialog, private router: Router) { }
 
   
   openDetails(smartPolicy:SmartPolicy){
-    this.router.navigateByUrl('view-details', {state: smartPolicy})
+    this.router.navigateByUrl('view-details', {state: {smart: smartPolicy, alerts: this.alerts}})
+  }
+
+  getAlertsSmart(id:number){
+    this.restService.getAlerts(id).subscribe((rest) => this.alerts = rest)
+    return this.alerts
   }
 
   public refresh(){
