@@ -27,15 +27,17 @@
     <p>Premium: {{ smartPolicy.contractPremium }}</p>
     <p>Liability: {{ smartPolicy.contractLiability }}</p>
 
-    <p> Sensor Id: {{smartPolicy.sensor}} </p>
-    <p> Name: {{sensor.sensorName}}</p>
-    <p> Type: {{sensor.type}}</p>
-    <p> Level Depth: {{sensor.levelDepth}}</p>
-    <p> Level Min: {{sensor.levelMinimumRange}}</p>
-    <p> Level Max: {{sensor.levelMaximumRange}}</p>
-    <p> % Weight: {{sensor.percentualWeight}}</p>
-
-
+    <!--
+    <tr *ngFor="let sensor of smartPolicy.sensors">
+      <p> Sensor Id: {{sensor.value.sensorId}} </p>
+      <p> Name: {{smartPolicy.sensor.sensorName}} </p>
+      <p> Type: {{smartPolicy.sensor.type}} </p>
+      <p> Level Depth: {{smartPolicy.sensor.levelDepth}}</p>
+      <p> Level Min: {{smartPolicy.sensor.levelMinimumRange}}</p>
+      <p> Level Max: {{smartPolicy.sensor.levelMaximumRange}}</p>
+      <p> % Weight: {{smartPolicy.sensor.percentualWeight}} </p>
+    </tr>
+  -->
   </mat-expansion-panel>
 
   <mat-expansion-panel hideToggle>

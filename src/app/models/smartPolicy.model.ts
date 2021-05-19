@@ -30,9 +30,9 @@ export class SmartPolicy{
 
     //MISSING MAP(String,SENSOR) *Do not put empty sensors!* 
 
-    sensor!: string;
+    //sensor!: string;
     //sensors!:Sensor[];
-
+    sensors!:Map<string, Sensor[]>
     /*
     meansOfTransport!: string;
     conditions!: string;

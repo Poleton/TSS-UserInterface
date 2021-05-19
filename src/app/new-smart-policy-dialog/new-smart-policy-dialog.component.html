@@ -3,7 +3,7 @@
     <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
         <p>{{this.id}}</p>
 
-        <input type="number" id="quantity" name="policyId" ngModel placeholder="Policy Id"> <br> <br>
+        <input type="number" id="quantity" name="policyId" ngModel placeholder="Policy Id"> {{this.id}} <br> <br>
         <input type="text" name="contractAddress" ngModel placeholder="Contract Address"> <br> <br>
         <input type="text" name="clientAddress" ngModel placeholder="Client Address"> <br> <br>
         <input type="text" name="insuranceAddress" ngModel placeholder="Insurance Address"> <br> <br>

@@ -25,7 +25,7 @@ export class ViewDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.smartPolicy=history.state.smart;
-    this.sensor=history.state;
+    //this.sensor=history.state;
     this.alerts=history.state.alerts;
   }
   onClick(){
