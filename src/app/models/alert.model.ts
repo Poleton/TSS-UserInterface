@@ -1,9 +1,7 @@
+import { SensorEvent } from "./sensorEvent.model";
 export class Alert{
-    state!: String;
-    levelId!: number;
-    sensorType!: number;
-    sensorData!: number;
-    dataExcess!: number;
-    levelExcessTime!: number;
-    contractReserve!: number;
+    id!: number;
+    state!: string;
+    events!: Map<string,SensorEvent>
+
 }

@@ -12,7 +12,7 @@
         Smart policy information
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>Product: {{smartPolicy.product }}</p> 
+    <p>Product: {{smartPolicy.product }}</p>
     <p>Description: {{ smartPolicy.description }}</p>
     <p>HolderName: {{ smartPolicy.policyHolderName }}</p>
     <p>MailAdress: {{ smartPolicy.mailAdress }}</p>
@@ -49,14 +49,21 @@
         Current alerts
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <tr *ngFor="let item of alerts">
-      <p>State: {{item.state}}</p>
-      <p>Level Id: {{item.levelId}}</p>
-      <p>Sensor Type: {{item.sensorType}}</p>
-      <p>Sensor Data: {{item.sensorData}}</p>
-      <p>Data Excess: {{item.dataExcess}}</p>
-      <p>Level Excess Time: {{item.levelExcessTime}}</p>
-      <p>Contract Reserve: {{item.contractReserve}}</p>
-  </tr>
+    <div *ngIf="alerts!=null">
+      <div *ngFor="let item of alerts">
+        <p>State: {{item.state}}</p>
+        <p>Id: {{item.id}}</p>
+        <div *ngIf="item.events!=null">
+          <div *ngFor=" let event of item.events | keyvalue">
+              <p> Type: {{event.value.type}} </p>
+              <p> Level Id: {{event.value.levelID}} </p>
+              <p> Sensor Data: {{event.value.updatedData}} </p>
+              <p> Data Excess: {{event.value.updatedDataExcess}} </p>
+              <p> Level Excess Time: {{event.value.levelExcessTime}} </p>
+              <p> Contract Reserve: {{event.value.contractReserve}} </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>

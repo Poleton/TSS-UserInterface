@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { stringify } from '@angular/compiler/src/util';
 import { Inject,Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
@@ -10,7 +10,7 @@ import { SmartPolicy } from '../models/smartPolicy.model';
   providedIn: 'root'
 })
 export class RestService {
-  key!: string 
+  key!: string
   smartPolUrl!: string
   policiesUrl!:string
   alertsUrl!:string
@@ -30,29 +30,34 @@ export class RestService {
 
   //policiesUrl = 'https://04c3d35e-2d99-4b22-b6a9-ae8a4498e05b.mock.pstmn.io/'; //policy
   //smartPolUrl = 'https://703c5070-c48b-489f-95e8-40e4fb1dcdb3.mock.pstmn.io'; //smart policy
-  //alertsUrl= 'https://849efb4b-ae14-46a3-905d-6c445a396287.mock.pstmn.io/';//alerts 
+  //alertsUrl= 'https://849efb4b-ae14-46a3-905d-6c445a396287.mock.pstmn.io/';//alerts
 
   //login='https://fde385b2-b4e8-4b78-81ec-10238ef16999.mock.pstmn.io?id=1234';
-  
+
   //API
   login = 'http://localhost:8080/user';
-  
-  
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+    })
+  };
+
   constructor( private _http: HttpClient) {
     console.warn("service2key", this.key)
   }
 
- 
+
 
   public setKey(_key:string){
     this.key=_key
-    this.smartPolUrl= "http://localhost:8080/users/"+this.key+"/api/smart-policies";    
-    this.policiesUrl= "http://localhost:8080/users/"+this.key+"/api/policies";   
-    this.alertsUrl= "http://localhost:8080/users/"+this.key+"/api/smart-policies/1/alerts";
+    this.smartPolUrl= "http://localhost:8080/users/"+this.key+"/api/smart-policies";
+    this.policiesUrl= "http://localhost:8080/users/"+this.key+"/api/policies";
+    this.alertsUrl= "http://localhost:8080/users/"+this.key+"/api/smart-policies/";
     console.warn("servicekey", this.key)
   }
   getAlerts(id : number){
-    return this._http.get<Alert[]>(this.alertsUrl) //+ this.key + "/" + id)
+    return this._http.get<Alert[]>(this.alertsUrl+id.toString()+"/alerts") //+ this.key + "/" + id)
   }
   getPolicies(){
     return this._http.get<Policy[]>(this.policiesUrl)
@@ -60,14 +65,14 @@ export class RestService {
   postPolicy(data: any){
     return this._http.post(this.policiesUrl, data)
   }
-////////////////////////////////////////////////////////////////
+
   getSmartPolicies(){
     return this._http.get<SmartPolicy[]>(this.smartPolUrl)
   }
   postSmartPolicy(data: any){
-    return this._http.post(this.smartPolUrl, data)
+    return this._http.post(this.smartPolUrl, data, this.httpOptions)
   }
-////////////////////////////////////////////////////////////////
+
   postLogin(data:any){
     return this._http.post(this.login, data, {observe: 'response'})
   }

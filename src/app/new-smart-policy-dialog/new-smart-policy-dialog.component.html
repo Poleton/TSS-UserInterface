@@ -7,23 +7,40 @@
 
     <!--poner el puto id-->
     <input type="text" id="policyId" name="policyId" [(ngModel)]="policyId" placeholder="policyId"> <br> <br>
-    <!--<input type="text" id="policyId" placeholder="Policy Id">  <br> <br> -->
     <input type="number" id="shipmentId" name="shipmentId" [(ngModel)]="shipmentId" ngModel placeholder="Shipment Id"> <br> <br>
     <input type="number" id="shipmentLiability" name="shipmentLiability" [(ngModel)]="shipmentLiability" ngModel placeholder="Shipment Liability"> <br> <br>
 
     <!--Sensors SISTEMA MAP CON CHECKBOX-->
-    <input type="checkbox" name="sensor" ngModel> temperature <br> <br>
+    <input type="checkbox" id="temperature" name="sensor" [(ngModel)]="temperature" ngModel> temperature <br> <br>
+    <input type="number" id="levelDepthT" name="levelDepth" [(ngModel)]="levelDepthT" ngModel placeholder="Level Depth"> <br> <br>
+    <input type="number" id="levelMinimumRangeT" name="levelMinimumRange" [(ngModel)]="levelMinimumRangeT" ngModel placeholder="min. range"> <br> <br>
+    <input type="number" id="levelMaximumRangeT" name="levelMaximumRange" [(ngModel)]="levelMaximumRangeT" ngModel placeholder="max. range"> <br> <br>
+    <input type="number" id="percentualWeightT" name="percentualWeight" [(ngModel)]="percentualWeightT" ngModel placeholder="% Weight"> <br> <br>
 
-    <input type="number" name="levelDepth" ngModel placeholder="Level Depth"> <br> <br>
-    <input type="number" name="levelMinimumRange" ngModel placeholder="min. range"> <br> <br>
-    <input type="number" name="levelMaximumRange" ngModel placeholder="max. range"> <br> <br>
-    <input type="number" name="percentualWeight" ngModel placeholder="% Weight"> <br> <br>
+    <input type="checkbox" id="pressure" name="sensor" [(ngModel)]="pressure" ngModel> pressure <br> <br>
+    <input type="number" id="levelDepthP" name="levelDepth" [(ngModel)]="levelDepthP" ngModel placeholder="Level Depth"> <br> <br>
+    <input type="number" id="levelMinimumRangeP" name="levelMinimumRange" [(ngModel)]="levelMinimumRangeP" ngModel placeholder="min. range"> <br> <br>
+    <input type="number" id="levelMaximumRangeP" name="levelMaximumRange" [(ngModel)]="levelMaximumRangeP" ngModel placeholder="max. range"> <br> <br>
+    <input type="number" id="percentualWeightP" name="percentualWeight" [(ngModel)]="percentualWeightP" ngModel placeholder="% Weight"> <br> <br>
 
-    <button class="mat-raised-button" type="submit" (click)="onSubmit()"> Create </button>
+    <input type="checkbox" id="acceleration" name="sensor" [(ngModel)]="acceleration" ngModel> acceleration <br> <br>
+    <input type="number" id="levelDepthA" name="levelDepth" [(ngModel)]="levelDepthA" ngModel placeholder="Level Depth"> <br> <br>
+    <input type="number" id="levelMinimumRangeA" name="levelMinimumRange" [(ngModel)]="levelMinimumRangeA" ngModel placeholder="min. range"> <br> <br>
+    <input type="number" id="levelMaximumRangeA" name="levelMaximumRange" [(ngModel)]="levelMaximumRangeA" ngModel placeholder="max. range"> <br> <br>
+    <input type="number" id="percentualWeightA" name="percentualWeight" [(ngModel)]="percentualWeightA" ngModel placeholder="% Weight"> <br> <br>
+
+    <input type="checkbox" id="humidity" name="sensor" [(ngModel)]="humidity" ngModel> humidity <br> <br>
+    <input type="number" id="levelDepthH" name="levelDepth" [(ngModel)]="levelDepthH" ngModel placeholder="Level Depth"> <br> <br>
+    <input type="number" id="levelMinimumRangeH" name="levelMinimumRange" [(ngModel)]="levelMinimumRangeH" ngModel placeholder="min. range"> <br> <br>
+    <input type="number" id="levelMaximumRangeH" name="levelMaximumRange" [(ngModel)]="levelMaximumRangeH" ngModel placeholder="max. range"> <br> <br>
+    <input type="number" id="percentualWeightH" name="percentualWeight" [(ngModel)]="percentualWeightH" ngModel placeholder="% Weight"> <br> <br>
+
+
        <!-- </form> -->
   </mat-dialog-content>
 
   <mat-dialog-actions>
+    <button class="mat-raised-button" type="submit" (click)="onSubmit()"> Create </button>
     <button class="mat-raised-button"(click)="close()">Cancel</button>
   </mat-dialog-actions>
 </body>

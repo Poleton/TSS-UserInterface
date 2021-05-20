@@ -16,6 +16,31 @@ export class NewSmartPolicyDialogComponent implements OnInit {
   shipmentId: any;
   shipmentLiability:any;
 
+  levelDepthT: any;
+  levelMinimumRangeT:any;
+  levelMaximumRangeT:any;
+  percentualWeightT:any;
+
+  levelDepthP: any;
+  levelMinimumRangeP:any;
+  levelMaximumRangeP:any;
+  percentualWeightP:any;
+
+  levelDepthA: any;
+  levelMinimumRangeA:any;
+  levelMaximumRangeA:any;
+  percentualWeightA:any;
+
+  levelDepthH: any;
+  levelMinimumRangeH:any;
+  levelMaximumRangeH:any;
+  percentualWeightH:any;
+
+  temperature:any;
+  pressure:any;
+  acceleration:any;
+  humidity:any;
+
   constructor(
     //public id: number,
     private http: HttpClient,
@@ -27,10 +52,35 @@ export class NewSmartPolicyDialogComponent implements OnInit {
   }
 
   onSubmit() {
-   /* this.restService.postSmartPolicy(data).subscribe((result) => {
+    let sensors:string = "    \"sensors\": { \n"
+    if(this.temperature){
+      sensors = sensors.concat("        \"temperature\": { \"levelDepth\": \""+this.levelDepthT+"\", \"levelMinimumRange\": \""+this.levelMinimumRangeT+"\", \"levelMaximumRange\": \""+this.levelMaximumRangeT+"\", \"percentualWeight\": \""+this.percentualWeightT+"\" },\n" )
+    }
+    if(this.pressure){
+      sensors = sensors.concat("        \"pressure\": { \"levelDepth\": \""+this.levelDepthP+"\", \"levelMinimumRange\": \""+this.levelMinimumRangeP+"\", \"levelMaximumRange\": \""+this.levelMaximumRangeP+"\", \"percentualWeight\": \""+this.percentualWeightP+"\" },\n" )
+    }
+    if(this.acceleration){
+      sensors = sensors.concat("        \"acceleration\": { \"levelDepth\": \""+this.levelDepthA+"\", \"levelMinimumRange\": \""+this.levelMinimumRangeA+"\", \"levelMaximumRange\": \""+this.levelMaximumRangeA+"\", \"percentualWeight\": \""+this.percentualWeightA+"\" },\n" )
+    }
+    if(this.humidity){
+      sensors = sensors.concat("        \"humidity\": { \"levelDepth\": \""+this.levelDepthH+"\", \"levelMinimumRange\": \""+this.levelMinimumRangeH+"\", \"levelMaximumRange\": \""+this.levelMaximumRangeH+"\", \"percentualWeight\": \""+this.percentualWeightH+"\" },\n" )
+    }
+    sensors = sensors.substr(0,sensors.length-2)
+    sensors = sensors.concat("    }\n" )
+
+    let text: string = "{\n" +
+      "    \"policyId\": \""+this.policyId+"\",\n" +
+      "    \"shipmentID\": \""+this.shipmentId+"\",\n" +
+      "    \"shipmentLiability\": \""+this.shipmentLiability+"\",\n" +
+      sensors +
+      "}"
+    console.warn("mapa sensors",text);
+    console.warn("temp",sensors)
+    this.restService.postSmartPolicy(text).subscribe((result) => {
       console.warn('result', result);
-    }); */
-    console.warn("fff",this.policyId);
+    });
+
+    console.warn("mapa sensors",text);
     this.dialogRef.close();
   }
 
