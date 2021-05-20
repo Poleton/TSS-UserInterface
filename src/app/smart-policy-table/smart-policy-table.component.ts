@@ -1,43 +1,73 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Alert } from '../models/alert.model';
 import { SmartPolicy } from '../models/smartPolicy.model';
 import { RestService } from '../services/rest.service';
+import { ViewDetailsComponent } from '../view-details/view-details.component';
 
 @Component({
   selector: 'app-smart-policy-table',
+  template: `
+    <view-details-component (messageEvent)="receiveMessage($event)"></view-details-component>
+  `,
   templateUrl: './smart-policy-table.component.html',
-  styleUrls: ['./smart-policy-table.component.css']
+  styleUrls: ['./smart-policy-table.component.css'],
 })
 export class SmartPolicyTableComponent implements OnInit {
-
-  displayedColumns: string[] = ['id', 'product', 'description', 'holderName', 'sensors', 'duration', 'details'];
-  dataSource : SmartPolicy[] = [];
+  displayedColumns: string[] = [
+    'id',
+    'product',
+    'description',
+    'holderName',
+    'newAlerts',
+    'duration',
+    'details',
+  ];
+  dataSource: SmartPolicy[] = [];
   dialog: any;
-  alerts: Alert[] =[];
-  map = new Map();
-
-  constructor(private restService: RestService, public detailsDialog: MatDialog, private router: Router) { }
-
+  alerts: Alert[] = [];
   
-  openDetails(smartPolicy:SmartPolicy, id:number){
-    this.router.navigateByUrl('view-details', {state: {smart: smartPolicy, alerts: this.map.get(id)}})
-    this.map.delete(id)
+  hasNewAlerts = new Map<number, number>();
+  newAlertsMap = new Map<number, number>();
+
+  constructor(
+    private restService: RestService,
+    public detailsDialog: MatDialog,
+    private router: Router
+  ) {}
+
+  receiveMessage($event: any) {
+    this.newAlertsMap.set($event[0], $event[1]);
   }
 
-  getAlertsSmart(id:number){
-    this.restService.getAlerts(id).subscribe((rest) => this.alerts = rest)
-    this.map.set(id, this.alerts);
-    return this.alerts
+  updateAlertsMap(spId: number, newAlertId: number) {
+    this.newAlertsMap.set(spId, newAlertId);
   }
 
-  public refresh(){
-    this.restService.getSmartPolicies().subscribe(rest => this.dataSource = rest);
+  openDetails(smartPolicy: SmartPolicy, id: number) {
+    this.router.navigateByUrl('view-details', {
+      state: { smart: smartPolicy },
+    });
   }
-  
+
+  public refresh() {
+    this.ngOnInit()
+  }
+
   ngOnInit(): void {
-    this.restService.getSmartPolicies().subscribe(rest => this.dataSource = rest);
+    this.restService
+      .getSmartPolicies()
+      .subscribe((rest) => (this.dataSource = rest));
+    let newAlerts: string = '{\n';
+    this.newAlertsMap.forEach((value: number, key: number) => {
+      newAlerts = newAlerts.concat('"' + key + '": "' + value + '",');
+    });
+    newAlerts = newAlerts.substr(0, newAlerts.length - 2);
+    newAlerts = newAlerts.concat('    }\n');
+
+    this.restService.postHasNewAlert(newAlerts).subscribe((result) => (this.hasNewAlerts = result));
+
   }
 }

@@ -1,7 +1,7 @@
 import { Sensor } from "./sensor.model";
 
 export class SmartPolicy{
-
+    id!: number;
     //These are in common with the policy
     policyName!: string;
     policyHolderCIF!: string;

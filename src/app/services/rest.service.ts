@@ -77,4 +77,8 @@ export class RestService {
     return this._http.post(this.login, data, {observe: 'response'})
   }
 
+  postHasNewAlert(data: any){
+    return this._http.post<Map<number, number>>(this.alertsUrl, data, this.httpOptions)
+  }
+
 }
