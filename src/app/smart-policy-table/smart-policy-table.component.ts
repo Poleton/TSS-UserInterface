@@ -9,9 +9,7 @@ import { ViewDetailsComponent } from '../view-details/view-details.component';
 
 @Component({
   selector: 'app-smart-policy-table',
-  template: `
-    <view-details-component (messageEvent)="receiveMessage($event)"></view-details-component>
-  `,
+  template: ` <view-details-component></view-details-component> `,
   templateUrl: './smart-policy-table.component.html',
   styleUrls: ['./smart-policy-table.component.css'],
 })
@@ -21,14 +19,13 @@ export class SmartPolicyTableComponent implements OnInit {
     'product',
     'description',
     'holderName',
-    'newAlerts',
     'duration',
     'details',
   ];
   dataSource: SmartPolicy[] = [];
   dialog: any;
   alerts: Alert[] = [];
-  
+
   hasNewAlerts = new Map<number, number>();
   newAlertsMap = new Map<number, number>();
 
@@ -38,10 +35,7 @@ export class SmartPolicyTableComponent implements OnInit {
     private router: Router
   ) {}
 
-  receiveMessage($event: any) {
-    this.newAlertsMap.set($event[0], $event[1]);
-  }
-
+  
   updateAlertsMap(spId: number, newAlertId: number) {
     this.newAlertsMap.set(spId, newAlertId);
   }
@@ -53,21 +47,26 @@ export class SmartPolicyTableComponent implements OnInit {
   }
 
   public refresh() {
-    this.ngOnInit()
+    this.ngOnInit();
   }
 
   ngOnInit(): void {
     this.restService
       .getSmartPolicies()
       .subscribe((rest) => (this.dataSource = rest));
-    let newAlerts: string = '{\n';
-    this.newAlertsMap.forEach((value: number, key: number) => {
-      newAlerts = newAlerts.concat('"' + key + '": "' + value + '",');
-    });
-    newAlerts = newAlerts.substr(0, newAlerts.length - 2);
-    newAlerts = newAlerts.concat('    }\n');
 
-    this.restService.postHasNewAlert(newAlerts).subscribe((result) => (this.hasNewAlerts = result));
+    console.warn(this.newAlertsMap.size);
+    if (this.newAlertsMap.size != 0) {
+      let newAlerts: string = '{\n';
+      this.newAlertsMap.forEach((value: number, key: number) => {
+        newAlerts = newAlerts.concat('"' + key + '": "' + value + '",');
+      });
+      newAlerts = newAlerts.substr(0, newAlerts.length - 2);
+      newAlerts = newAlerts.concat('    }\n');
 
+      this.restService
+        .postHasNewAlert(newAlerts)
+        .subscribe((result) => (this.hasNewAlerts = result));
+    }
   }
 }

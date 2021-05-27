@@ -43,7 +43,7 @@ import { SmartPoliciesToolbarComponent } from './smart-policies-toolbar/smart-po
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [RestService],
+  providers: [RestService, SmartPolicyTableComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
