@@ -1,35 +1,18 @@
-
-.mat-table {
-  overflow-x: scroll;
-}
-.mat-cell {
-  color: black;
-  word-wrap: initial;
-  display: table-cell;
-  padding: 0px 10px;
-  line-break: unset;
+table {
   width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  vertical-align: middle;
+}
+
+.mat-row {
+background-color:rgb(248,248,255);
+}
+
+.mat-cell {
+font-size:medium;
+color: black;
 }
 
 .mat-header-cell {
-  color:white;
-  background-color: grey;
-  word-wrap: initial;
-  font-size: medium;
-  display: table-cell;
-  padding: 0px 10px;
-  line-break: unset;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  vertical-align: middle;
-}
-
-.mat-row,
-.mat-header-row {
-  display: table-row;
-  background-color: rgb(248, 248, 255);
+color: white;
+background-color: grey;
+font-size:medium;
 }

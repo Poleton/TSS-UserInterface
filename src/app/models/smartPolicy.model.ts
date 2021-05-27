@@ -14,17 +14,13 @@ export class SmartPolicy{
 
     inceptionTimestamp!: number
     //Added for the customer, also in common
-    description!: string;
     holderName!: string;
-    mailAdress!: string;
-    duration!: string;
-    
     //These are exclusive to the smartpolicy
     policyId!: number;
-    contractAdress!: string;
-    clientAdress!: string;
+    contractAddress!: string;
+    clientAddress!: string;
     insuranceAddress!: string;
-    brokerAdress!: string;
+    brokerAddress!: string;
     shipmentID!: number;
     shipmentLiability!: number;
 
@@ -32,7 +28,7 @@ export class SmartPolicy{
 
     //sensor!: string;
     //sensors!:Sensor[];
-    sensors!:Map<string, Sensor[]>
+    sensors!:Map<string, Sensor>
     /*
     meansOfTransport!: string;
     conditions!: string;

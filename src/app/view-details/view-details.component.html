@@ -12,32 +12,34 @@
         Smart policy information
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>Product: {{smartPolicy.product }}</p>
-    <p>Description: {{ smartPolicy.description }}</p>
-    <p>HolderName: {{ smartPolicy.policyHolderName }}</p>
-    <p>MailAdress: {{ smartPolicy.mailAdress }}</p>
-    <p>Duration: {{ smartPolicy.duration }}</p>
-    <p>Territorial Scope: {{ smartPolicy.territorialScope }}</p>
+
+    <mat-divider> </mat-divider>
+    <br>
     <p>Policy Id: {{ smartPolicy.policyId }}</p>
-    <p>clientAdress: {{ smartPolicy.clientAdress }}</p>
+    <p>Product: {{smartPolicy.product }}</p>
+    <p>HolderName: {{ smartPolicy.policyHolderName }}</p>
+    <p>Territorial Scope: {{ smartPolicy.territorialScope }}</p>
+    <p>Client Address: {{ smartPolicy.clientAddress }}</p>
     <p>Insurance Address: {{ smartPolicy.insuranceAddress }}</p>
-    <p>Broker Address: {{ smartPolicy.brokerAdress }}</p>
+    <p>Broker Address: {{ smartPolicy.brokerAddress }}</p>
     <p>Shipment Id: {{ smartPolicy.shipmentID }}</p>
     <p>Shipment Liability: {{ smartPolicy.shipmentLiability }}</p>
     <p>Premium: {{ smartPolicy.contractPremium }}</p>
     <p>Liability: {{ smartPolicy.contractLiability }}</p>
+    
+    <br>
+    <p> Sensors: </p>
 
-    <!--
-    <tr *ngFor="let sensor of smartPolicy.sensors">
-      <p> Sensor Id: {{sensor.value.sensorId}} </p>
-      <p> Name: {{smartPolicy.sensor.sensorName}} </p>
-      <p> Type: {{smartPolicy.sensor.type}} </p>
-      <p> Level Depth: {{smartPolicy.sensor.levelDepth}}</p>
-      <p> Level Min: {{smartPolicy.sensor.levelMinimumRange}}</p>
-      <p> Level Max: {{smartPolicy.sensor.levelMaximumRange}}</p>
-      <p> % Weight: {{smartPolicy.sensor.percentualWeight}} </p>
-    </tr>
-  -->
+    <div *ngFor="let sensor of smartPolicy.sensors | keyvalue">
+        <p> &nbsp; Sensor Id: {{sensor.key}} </p> 
+        <p> &nbsp; levelDepth:  {{sensor.value.levelDepth}} </p>
+        <p> &nbsp; levelMinimumRange: {{ sensor.value.levelMinimumRange }}</p>
+        <p> &nbsp; levelMaximumRange: {{ sensor.value.levelMaximumRange }}</p>
+        <p> &nbsp; percentualWeight: {{ sensor.value.percentualWeight }}</p>
+        <br>
+
+    </div>
+
   </mat-expansion-panel>
 
   <mat-expansion-panel hideToggle>
@@ -51,16 +53,21 @@
     </mat-expansion-panel-header>
     <div *ngIf="alerts!=null">
       <div *ngFor="let item of alerts">
+        <mat-divider> </mat-divider>
+        <br>
+        <p>Alert: </p>
         <p>State: {{item.state}}</p>
         <p>Id: {{item.id}}</p>
+        <p>Sensors data:</p>
         <div *ngIf="item.events!=null">
           <div *ngFor=" let event of item.events | keyvalue">
-              <p> Type: {{event.value.type}} </p>
-              <p> Level Id: {{event.value.levelID}} </p>
-              <p> Sensor Data: {{event.value.updatedData}} </p>
-              <p> Data Excess: {{event.value.updatedDataExcess}} </p>
-              <p> Level Excess Time: {{event.value.levelExcessTime}} </p>
-              <p> Contract Reserve: {{event.value.contractReserve}} </p>
+              <p> &nbsp; Type: {{event.value.type}} </p>
+              <p> &nbsp; Level Id: {{event.value.levelID}} </p>
+              <p> &nbsp; Sensor Data: {{event.value.updatedData}} </p>
+              <p> &nbsp; Data Excess: {{event.value.updatedDataExcess}} </p>
+              <p> &nbsp; Level Excess Time: {{event.value.levelExcessTime}} </p>
+              <p> &nbsp; Contract Reserve: {{event.value.contractReserve}} </p>
+              <br>
           </div>
         </div>
       </div>

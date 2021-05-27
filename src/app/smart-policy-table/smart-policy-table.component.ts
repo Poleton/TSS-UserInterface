@@ -17,10 +17,10 @@ export class SmartPolicyTableComponent implements OnInit {
   displayedColumns: string[] = [
     'id',
     'product',
-    'description',
+    'contractAddress',
     'holderName',
-    'duration',
-    'details',
+    'shipmentId',
+    'details'
   ];
   dataSource: SmartPolicy[] = [];
   dialog: any;

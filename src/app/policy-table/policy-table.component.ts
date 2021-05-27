@@ -20,7 +20,6 @@ import { LoginComponent } from "../login/login.component";
 export class PolicyTableComponent implements OnInit {
   displayedColumns: string[] = [
     "id",
-    "description",
     "policyName",
     "policyHolderCIF",
     "policyHolderName",
@@ -29,9 +28,6 @@ export class PolicyTableComponent implements OnInit {
     "contractLiability",
     "expiryTimestamp",
     "inceptionTimestamp",
-    "isSmart",
-    "mailAdress",
-    "duration",
     "actions"
   ];
   //dataSource: Policy[] = [];

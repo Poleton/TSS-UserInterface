@@ -15,8 +15,5 @@ export class Policy {
     isSmart!: boolean;
 
     //Added for the customer. Igual se quitan pq petará si no
-    description!: string;
-    mailAdress!: string;
-    duration!: string;
 
 }
