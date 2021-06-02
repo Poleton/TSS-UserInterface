@@ -21,6 +21,7 @@ import { ViewDetailsComponent } from './view-details/view-details.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { LoginComponent } from './login/login.component';
 import { SmartPoliciesToolbarComponent } from './smart-policies-toolbar/smart-policies-toolbar.component';
+
 @NgModule({
   declarations: [
      AppComponent, 

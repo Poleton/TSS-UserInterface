@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SmartPolicy } from '../models/smartPolicy.model';
 import { Sensor } from '../models/sensor.model';
@@ -10,58 +16,53 @@ import { SmartPolicyTableComponent } from '../smart-policy-table/smart-policy-ta
 @Component({
   selector: 'app-view-details',
   templateUrl: './view-details.component.html',
-  styleUrls: ['./view-details.component.css']
+  styleUrls: ['./view-details.component.css'],
 })
-
-export class ViewDetailsComponent implements OnInit,AfterViewInit {
-
+export class ViewDetailsComponent implements OnInit {
   //@Output() messageEvent = new EventEmitter<number[]>();
 
   smartPolicy!: SmartPolicy;
   alerts: Alert[] = [];
-  data:any;
+  data: any;
 
-  constructor(private restService: RestService, private router: Router) {  }
+  constructor(
+    private restService: RestService,
+    private router: Router,
+    private smartPolicyTableComponent: SmartPolicyTableComponent
+  ) {}
 
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
+  // sp= this.smartPolicyTableComponent.dialog;
+
+  getAlertsSmart(id: number) {
+    //this.restService.getAlerts(id).subscribe((rest) => (this.alerts = rest));
+    this.restService.getAlerts(id)
+      .toPromise()
+      .then(
+        (res) => {
+          this.alerts = res
+          let alertId: number = 0;
+          for(let i: number = 0; i < this.alerts.length; i++){
+            if (alertId < this.alerts[i].id) {
+              alertId = this.alerts[i].id;
+            }
+          }
+          console.warn(alertId)
+          this.smartPolicyTableComponent.updateAlertsMap(this.smartPolicy.id, alertId);
+        },
+        (error) => {
+          this.smartPolicyTableComponent.updateAlertsMap(this.smartPolicy.id, 0);
+         })
   }
-
-  getAlertsSmart(id:number){
-    this.restService.getAlerts(id).subscribe((rest) => this.alerts = rest)
-    let alertId: number = 0;
-    this.alerts.forEach(function(value: Alert){
-      if (alertId < value.id){
-        alertId = value.id;
-      }
-    })
-
-    /*
-    getAlertsSmart(id:number){
-      this.restService.getAlerts(id).subscribe((rest) => this.alerts = rest)
-      let alertId: number = 0;
-      this.alerts.forEach(function(value: Alert){
-        if (alertId < value.id){
-          alertId = value.id;
-        }
-      })
-    */
-    //let ids: number[] = [this.smartPolicy.id, alertId] 
-    //this.messageEvent.emit(ids);
-
-  }
-
 
   ngOnInit(): void {
-    
     this.smartPolicy = history.state.smart;
     // this.sensor=history.state;
-    this.getAlertsSmart(this.smartPolicy.id)
+    this.getAlertsSmart(this.smartPolicy.id);
+    //Funcion a crear en la smart tables que inyectamos aquí(a traves de la sp i la last alert) que haga un put en el map de alertas
+    //->Si está en la lista la sobreescribe
+    
   }
-  onClick(){
-    this.router.navigate(['home'])
-
-
-
+  onClick() {
+    this.router.navigate(['home']);
   }
 }

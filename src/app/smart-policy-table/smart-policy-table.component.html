@@ -34,9 +34,15 @@
     
     <ng-container matColumnDef="details">
       <th mat-header-cell *matHeaderCellDef> Details </th>
-      <td mat-cell *matCellDef="let smartPolicy"> 
-       <button mat-icon-button (click)="openDetails(smartPolicy,smartPolicy.policyId)"> <mat-icon matBadge="{{this.hasNewAlerts.get(smartPolicy.policyId)}}"> open_in_new </mat-icon> </button> 
+      <td mat-cell *matCellDef="let smartPolicy">
+       <button mat-icon-button (click)="openDetails(smartPolicy,smartPolicy.policyId)"> <mat-icon matBadge="{{getAlertsNumber(smartPolicy.policyId)}}"> open_in_new </mat-icon> </button>
+       <!-- <button mat-raised-button (click)="openDetails(smartPolicy,smartPolicy.policyId)" matBadge="{{getAlertsNumber(smartPolicy.policyId)}}" color="primary"> Details </button> -->
       </td>
+    </ng-container>
+
+    <ng-container matColumnDef="alerts">
+      <th mat-header-cell *matHeaderCellDef> Alerts </th>
+      <td mat-cell *matCellDef="let smartPolicy"> {{getAlertsNumber(smartPolicy.policyId)}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

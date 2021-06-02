@@ -6,6 +6,7 @@ import { Alert } from '../models/alert.model';
 import { SmartPolicy } from '../models/smartPolicy.model';
 import { RestService } from '../services/rest.service';
 import { ViewDetailsComponent } from '../view-details/view-details.component';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-smart-policy-table',
@@ -26,8 +27,10 @@ export class SmartPolicyTableComponent implements OnInit {
   dialog: any;
   alerts: Alert[] = [];
 
-  hasNewAlerts = new Map<number, number>();
-  newAlertsMap = new Map<number, number>();
+  static hasNewAlerts = new Map<number, number>();
+  static newAlertsMap = new Map<number, number>();
+
+  public classReference = SmartPolicyTableComponent;
 
   constructor(
     private restService: RestService,
@@ -35,9 +38,18 @@ export class SmartPolicyTableComponent implements OnInit {
     private router: Router
   ) {}
 
+  public getAlertsNumber(spId: number) {
+    if (SmartPolicyTableComponent.hasNewAlerts && SmartPolicyTableComponent.hasNewAlerts.get(spId) != 0){
+      return SmartPolicyTableComponent.hasNewAlerts.get(spId)
+    }else{
+      return null;
+    }
+  }
   
   updateAlertsMap(spId: number, newAlertId: number) {
-    this.newAlertsMap.set(spId, newAlertId);
+    console.warn(newAlertId)
+    SmartPolicyTableComponent.newAlertsMap.set(spId, newAlertId);
+    console.warn(SmartPolicyTableComponent.newAlertsMap)
   }
 
   openDetails(smartPolicy: SmartPolicy, id: number) {
@@ -51,22 +63,46 @@ export class SmartPolicyTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.restService
-      .getSmartPolicies()
-      .subscribe((rest) => (this.dataSource = rest));
+    this.restService.getSmartPolicies()
+      .toPromise()
+      .then(
+        (res) => {
+          this.dataSource = res
 
-    console.warn(this.newAlertsMap.size);
-    if (this.newAlertsMap.size != 0) {
-      let newAlerts: string = '{\n';
-      this.newAlertsMap.forEach((value: number, key: number) => {
-        newAlerts = newAlerts.concat('"' + key + '": "' + value + '",');
-      });
-      newAlerts = newAlerts.substr(0, newAlerts.length - 2);
-      newAlerts = newAlerts.concat('    }\n');
+          console.warn(this.dataSource.length)
+          
+          console.warn("segundo: "+ SmartPolicyTableComponent.newAlertsMap.size)
+          for(let i: number = 0; i < this.dataSource.length; i++){
+            console.warn("primero: "+!SmartPolicyTableComponent.newAlertsMap.has(this.dataSource[i].id))
+            if (!SmartPolicyTableComponent.newAlertsMap.has(this.dataSource[i].id)){
+              SmartPolicyTableComponent.newAlertsMap.set(this.dataSource[i].id, 0)
+            }
+          }
 
-      this.restService
-        .postHasNewAlert(newAlerts)
-        .subscribe((result) => (this.hasNewAlerts = result));
-    }
-  }
+          let newAlerts: string = '{';
+          SmartPolicyTableComponent.newAlertsMap.forEach((value: number, key: number) => {
+            newAlerts = newAlerts.concat('"' + key + '": "' + value + '",');
+          });
+          newAlerts = newAlerts.substr(0, newAlerts.length - 1);
+          newAlerts = newAlerts.concat('}');
+
+          console.warn(newAlerts)
+          this.restService
+            .postHasNewAlert(newAlerts)
+            .pipe(
+              map((response: number[]) => {
+                  let toReturn = new Map<number, number>();
+                  SmartPolicyTableComponent.newAlertsMap.forEach((value: number, key: number) => {
+                    toReturn.set(key, response[key]);
+                  });
+                  return toReturn;
+              })
+          ).subscribe((data: Map<number, number>) => {SmartPolicyTableComponent.hasNewAlerts = data});
+        
+        },
+        (error) => {
+          
+         })
+
+  }    
 }
