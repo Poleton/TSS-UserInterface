@@ -54,6 +54,21 @@ export class ViewDetailsComponent implements OnInit {
          })
   }
 
+  typeToName(id:any): string{
+    let name:string =""
+    switch(id){
+      case 1: name="TEMPERATURE"
+      break
+      case 2: name="PRESSURE"
+      break
+      case 3: name="ACCELERATION"
+      break
+      case 4: name="HUMIDITY"
+      break
+    }
+    return name
+  }
+  
   ngOnInit(): void {
     this.smartPolicy = history.state.smart;
     // this.sensor=history.state;

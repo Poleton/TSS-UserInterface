@@ -29,9 +29,9 @@
     
     <br>
     <p> Sensors: </p>
-
     <div *ngFor="let sensor of smartPolicy.sensors | keyvalue">
-        <p> &nbsp; Sensor Id: {{sensor.key}} </p> 
+
+        <p> &nbsp; type: {{sensor.key}} </p>
         <p> &nbsp; levelDepth:  {{sensor.value.levelDepth}} </p>
         <p> &nbsp; levelMinimumRange: {{ sensor.value.levelMinimumRange }}</p>
         <p> &nbsp; levelMaximumRange: {{ sensor.value.levelMaximumRange }}</p>
