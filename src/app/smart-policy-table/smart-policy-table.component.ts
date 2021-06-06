@@ -21,7 +21,9 @@ export class SmartPolicyTableComponent implements OnInit {
     'contractAddress',
     'holderName',
     'shipmentId',
-    'details'
+    'details',
+    'state',
+    'deactivationButton'
   ];
   dataSource: SmartPolicy[] = [];
   dialog: any;
@@ -38,6 +40,9 @@ export class SmartPolicyTableComponent implements OnInit {
     private router: Router
   ) {}
 
+  public deactivate(){
+    
+  }
   public getAlertsNumber(spId: number) {
     if (SmartPolicyTableComponent.hasNewAlerts && SmartPolicyTableComponent.hasNewAlerts.get(spId) != 0){
       return SmartPolicyTableComponent.hasNewAlerts.get(spId)

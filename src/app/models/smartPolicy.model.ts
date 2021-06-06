@@ -24,14 +24,9 @@ export class SmartPolicy{
     shipmentID!: number;
     shipmentLiability!: number;
 
-    //MISSING MAP(String,SENSOR) *Do not put empty sensors!* 
-
-    //sensor!: string;
-    //sensors!:Sensor[];
     sensors!:Map<string, Sensor>
-    /*
-    meansOfTransport!: string;
-    conditions!: string;
-    */
+   
+    //String o que ????
+    state!:any
     
 }

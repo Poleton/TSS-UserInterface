@@ -45,6 +45,25 @@
       <td mat-cell *matCellDef="let smartPolicy"> {{getAlertsNumber(smartPolicy.policyId)}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="state">
+      <th mat-header-cell *matHeaderCellDef> State </th>
+      <td mat-cell *matCellDef="let smartPolicy"> {{smartPolicy.state}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="deactivationButton">
+      <th mat-header-cell *matHeaderCellDef> Deactivate </th>
+      <td mat-cell *matCellDef="let smartPolicy">
+        <!-- si está activo boton clicable-->
+        <div ngIf*="smart.policy.state!=active"> <!-- state que valores pilla?? -->
+          <button mat-icon-button (click)="deactivate()"> <mat-icon>remove_circle_outline</mat-icon> </button>
+        </div>
+        <!-- si está desactivado boton no clicable-->
+        <div ngIf*="smart.policy.state!=desactivated"> <!-- state que valores pilla?? -->
+          <button mat-icon-button (click)="deactivate()" [disabled]="true" > <mat-icon>remove_circle_outline</mat-icon> </button>
+         </div>
+      </td>
+    </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     
