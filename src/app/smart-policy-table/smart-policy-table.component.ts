@@ -41,8 +41,17 @@ export class SmartPolicyTableComponent implements OnInit {
   ) {}
 
   public deactivate(){
-    
+    // aqui que 
   }
+
+  public deactivateDisabled(state:any) {
+    let disable:boolean
+    if(state == "ACTIVATED"){
+      disable = false
+    } else ( disable = true )
+    return disable
+  }
+
   public getAlertsNumber(spId: number) {
     if (SmartPolicyTableComponent.hasNewAlerts && SmartPolicyTableComponent.hasNewAlerts.get(spId) != 0){
       return SmartPolicyTableComponent.hasNewAlerts.get(spId)
