@@ -55,9 +55,8 @@
       <div *ngFor="let item of alerts">
         <mat-divider> </mat-divider>
         <br>
-        <p>Alert: </p>
+        <p>Alert: {{item.id}}</p>
         <p>State: {{item.state}}</p>
-        <p>Id: {{item.id}}</p>
         <p>Sensors data:</p>
         <div *ngIf="item.events!=null">
           <div *ngFor=" let event of item.events | keyvalue">

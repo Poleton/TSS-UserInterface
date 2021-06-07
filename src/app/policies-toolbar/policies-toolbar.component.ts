@@ -12,8 +12,6 @@ import { RestService } from '../services/rest.service';
 })
 export class PoliciesToolbarComponent implements OnInit {
 
-  //datos: Policy[]=[];
-
   ngOnInit() {
 
   }
@@ -24,6 +22,7 @@ export class PoliciesToolbarComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      this.refresh_()
     });
   }
 
