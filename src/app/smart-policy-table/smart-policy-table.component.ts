@@ -40,8 +40,8 @@ export class SmartPolicyTableComponent implements OnInit {
     private router: Router
   ) {}
 
-  public deactivate(){
-    // aqui que 
+  public deactivate(smartId:number){
+    this.restService.getDeactivate(smartId); 
   }
 
   public deactivateDisabled(state:any) {

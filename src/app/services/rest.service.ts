@@ -15,7 +15,7 @@ export class RestService {
   policiesUrl!:string
   alertsUrl!:string
   newAlertsUrl!:string
-
+  deactivateUrl!:string
   //API
   login = 'http://localhost:8080/user';
 
@@ -37,7 +37,7 @@ export class RestService {
     this.policiesUrl= "http://localhost:8080/users/"+this.key+"/api/policies";
     this.alertsUrl= "http://localhost:8080/users/"+this.key+"/api/smart-policies/";
     this.newAlertsUrl= "http://localhost:8080/users/"+this.key+"/api/smart-policies/new-alerts";
-
+    this.deactivateUrl= "http://localhost:8080/users/" +this.key+ "/api/smart-policies/"
     console.warn("servicekey", this.key)
   }
   getAlerts(id : number){
@@ -65,4 +65,7 @@ export class RestService {
     return this._http.post<any>(this.newAlertsUrl, data, this.httpOptions)
   }
 
+  getDeactivate(smartId:number){
+    return this._http.get<any>(this.deactivateUrl+smartId.toString()+"/deactivation")
+  }
 }
