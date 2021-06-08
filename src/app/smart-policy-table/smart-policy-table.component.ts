@@ -16,7 +16,7 @@ import { map } from 'rxjs/operators';
 })
 export class SmartPolicyTableComponent implements OnInit {
   displayedColumns: string[] = [
-    'id',
+    'name',
     'product',
     'contractAddress',
     'holderName',

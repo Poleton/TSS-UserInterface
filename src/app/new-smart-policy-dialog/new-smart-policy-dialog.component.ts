@@ -70,7 +70,7 @@ export class NewSmartPolicyDialogComponent implements OnInit {
 
     let text: string = "{\n" +
       "    \"policyId\": \""+this.policyId+"\",\n" +
-      "    \"shipmentID\": \""+this.shipmentId+"\",\n" +
+      "    \"shipmentID\": \""+"0"+"\",\n" +
       "    \"shipmentLiability\": \""+this.shipmentLiability+"\",\n" +
       sensors +
       "}"
