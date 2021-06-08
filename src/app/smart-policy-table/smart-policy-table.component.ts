@@ -41,7 +41,16 @@ export class SmartPolicyTableComponent implements OnInit {
   ) {}
 
   public deactivate(smartId:number){
-    this.restService.getDeactivate(smartId); 
+    this.restService.getDeactivate(smartId)
+    .toPromise()
+    .then(
+      (res) => {
+        this.ngOnInit()
+      },
+      (error) => {
+        //error
+      }
+    )
   }
 
   public deactivateDisabled(state:any) {
@@ -115,8 +124,8 @@ export class SmartPolicyTableComponent implements OnInit {
         
         },
         (error) => {
-          
-         })
+          //error
+        })
 
   }    
 }

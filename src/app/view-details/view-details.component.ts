@@ -19,7 +19,6 @@ import { SmartPolicyTableComponent } from '../smart-policy-table/smart-policy-ta
   styleUrls: ['./view-details.component.css'],
 })
 export class ViewDetailsComponent implements OnInit {
-  //@Output() messageEvent = new EventEmitter<number[]>();
 
   smartPolicy!: SmartPolicy;
   alerts: Alert[] = [];
@@ -31,10 +30,7 @@ export class ViewDetailsComponent implements OnInit {
     private smartPolicyTableComponent: SmartPolicyTableComponent
   ) {}
 
-  // sp= this.smartPolicyTableComponent.dialog;
-
   getAlertsSmart(id: number) {
-    //this.restService.getAlerts(id).subscribe((rest) => (this.alerts = rest));
     this.restService.getAlerts(id)
       .toPromise()
       .then(
