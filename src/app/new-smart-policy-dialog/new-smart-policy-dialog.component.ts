@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit } from '@angular/core';
 import {  MatDialog,  MatDialogRef,  MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { RestService } from '../services/rest.service';
@@ -43,6 +43,7 @@ export class NewSmartPolicyDialogComponent implements OnInit {
 
   constructor(
     //public id: number,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private http: HttpClient,
     private restService: RestService,
     private dialogRef: MatDialogRef<NewSmartPolicyDialogComponent>
@@ -69,7 +70,7 @@ export class NewSmartPolicyDialogComponent implements OnInit {
     sensors = sensors.concat("    }\n" )
 
     let text: string = "{\n" +
-      "    \"policyId\": \""+this.policyId+"\",\n" +
+      "    \"policyId\": \""+this.data.id+"\",\n" +
       "    \"shipmentID\": \""+"0"+"\",\n" +
       "    \"shipmentLiability\": \""+this.shipmentLiability+"\",\n" +
       sensors +
